@@ -1,0 +1,92 @@
+.page {
+  height: 100svh;
+  display: grid;
+  place-items: start center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.shell {
+  width: min(100%, 1200px);
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  align-content: safe center;
+  justify-items: center;
+  padding: clamp(16px, 3vh, 48px) clamp(20px, 4vw, 64px);
+  gap: clamp(10px, 1.8vh, 24px);
+}
+
+.shell--blocked {
+  pointer-events: none;
+}
+
+.artist-slot svg,
+.artist-slot p,
+.item {
+  visibility: hidden;
+}
+
+.artist-slot,
+.item {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  width: 100%;
+  min-height: 100svh;
+  place-items: center;
+  pointer-events: none;
+}
+
+.overlay__signature {
+  width: min(78vw, 760px);
+}
+
+.overlay__signature > svg {
+  width: 100%;
+  height: auto;
+  will-change: transform, opacity;
+}
+
+.overlay :global(.signature-draw-path) {
+  stroke-opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .artist-slot svg,
+  .artist-slot p,
+  .item {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    place-items: start center;
+  }
+
+  .shell {
+    min-height: 100svh;
+    align-content: start;
+    padding-block: 32px;
+    gap: clamp(12px, 3vw, 20px);
+  }
+
+  .overlay__signature {
+    width: min(88vw, 560px);
+  }
+}

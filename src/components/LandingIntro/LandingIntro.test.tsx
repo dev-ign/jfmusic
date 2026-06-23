@@ -1,10 +1,26 @@
-import { act, cleanup, render, screen, waitFor } from '@testing-library/react';
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { readFileSync } from 'node:fs';
 
 import LandingIntro from './LandingIntro';
 
 type TweenVars = Record<string, unknown> & { onComplete?: () => void };
+
+const orchestrationMock = vi.hoisted(() => ({
+  canShow: true,
+  reset: vi.fn(),
+  recordCompletion: vi.fn(),
+  markShown: vi.fn(),
+  recordDismissal: vi.fn(),
+  animationFrames: [] as FrameRequestCallback[],
+}));
 
 const isRevealMaskPath = (target: unknown): target is Element =>
   target instanceof Element &&
@@ -52,6 +68,7 @@ vi.mock('@gsap/react', async () => {
         context: unknown,
         contextSafe?: <T extends (...args: never[]) => unknown>(callback: T) => T,
       ) => void | (() => void),
+      config?: { dependencies?: unknown[] },
     ) => {
       useLayoutEffect(() => {
         if (!gsapMock.enabled) return;
@@ -59,7 +76,9 @@ vi.mock('@gsap/react', async () => {
           {},
           gsapMock.omitContextSafe ? undefined : (safeCallback) => safeCallback,
         );
-      }, [callback]);
+        // Production useGSAP runs once when no dependencies are supplied.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, config?.dependencies ?? []);
     },
   };
 });
@@ -145,6 +164,81 @@ vi.mock('wavesurfer.js', () => ({
   },
 }));
 
+vi.mock('@/components/AudioPreview/AudioPreview', () => ({
+  default: ({
+    onPlaybackChange,
+    onQualifiedFinish,
+  }: {
+    onPlaybackChange?: (isPlaying: boolean) => void;
+    onQualifiedFinish?: (reset: () => void) => void;
+  }) => (
+    <div>
+      <button type="button" aria-label="Play preview" disabled />
+      <button
+        type="button"
+        onClick={() => onPlaybackChange?.(true)}
+      >
+        Report preview playing
+      </button>
+      <button
+        type="button"
+        onClick={() => onQualifiedFinish?.(orchestrationMock.reset)}
+      >
+        Report qualified finish
+      </button>
+    </div>
+  ),
+}));
+
+vi.mock('@/components/CoverCard/CoverCard', () => ({
+  default: ({
+    isPlaying,
+    isSettling,
+  }: {
+    isPlaying?: boolean;
+    isSettling?: boolean;
+  }) => (
+    <div
+      data-testid="cover-card"
+      data-playing={String(Boolean(isPlaying))}
+      data-settling={String(Boolean(isSettling))}
+    >
+      <span
+        role="img"
+        aria-label="Caramelo single cover art by Jona Ferreira"
+      />
+    </div>
+  ),
+}));
+
+vi.mock('@/components/PostPreviewModal/PostPreviewModal', () => ({
+  default: ({
+    isOpen,
+    onRequestClose,
+    onExited,
+  }: {
+    isOpen: boolean;
+    onRequestClose: () => void;
+    onExited?: () => void;
+  }) => (
+    <div data-testid="post-preview-modal" data-open={String(isOpen)}>
+      <button type="button" onClick={onRequestClose}>
+        Close post-preview modal
+      </button>
+      <button type="button" onClick={onExited}>
+        Complete modal exit
+      </button>
+    </div>
+  ),
+}));
+
+vi.mock('@/lib/postPreviewPrompt', () => ({
+  canShowPostPreviewPrompt: vi.fn(() => orchestrationMock.canShow),
+  markPostPreviewPromptShown: orchestrationMock.markShown,
+  recordPostPreviewDismissal: orchestrationMock.recordDismissal,
+  recordPreviewCompletion: orchestrationMock.recordCompletion,
+}));
+
 beforeEach(() => {
   gsapMock.enabled = false;
   gsapMock.reduceMotion = false;
@@ -154,6 +248,20 @@ beforeEach(() => {
   gsapMock.moves.length = 0;
   gsapMock.mediaHandlers.length = 0;
   gsapMock.mediaConditions.length = 0;
+  orchestrationMock.canShow = true;
+  orchestrationMock.reset.mockReset();
+  orchestrationMock.recordCompletion.mockReset();
+  orchestrationMock.markShown.mockReset();
+  orchestrationMock.recordDismissal.mockReset();
+  orchestrationMock.animationFrames.length = 0;
+  vi.stubGlobal(
+    'requestAnimationFrame',
+    vi.fn((callback: FrameRequestCallback) => {
+      orchestrationMock.animationFrames.push(callback);
+      return orchestrationMock.animationFrames.length;
+    }),
+  );
+  vi.stubGlobal('cancelAnimationFrame', vi.fn());
 });
 
 afterEach(() => {
@@ -179,6 +287,266 @@ afterEach(() => {
 });
 
 describe('LandingIntro', () => {
+  it('passes preview playback state through to the cover', () => {
+    render(<LandingIntro />);
+
+    expect(screen.getByTestId('cover-card')).toHaveAttribute(
+      'data-playing',
+      'false',
+    );
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report preview playing' }),
+    );
+
+    expect(screen.getByTestId('cover-card')).toHaveAttribute(
+      'data-playing',
+      'true',
+    );
+  });
+
+  it('reserves an eligible finish, then marks and resets only after the modal commits open', () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false })));
+    orchestrationMock.markShown.mockImplementation(() => {
+      expect(screen.getByTestId('post-preview-modal')).toHaveAttribute(
+        'data-open',
+        'true',
+      );
+    });
+    orchestrationMock.reset.mockImplementation(() => {
+      expect(screen.getByTestId('post-preview-modal')).toHaveAttribute(
+        'data-open',
+        'true',
+      );
+    });
+
+    render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    expect(orchestrationMock.recordCompletion).toHaveBeenCalledOnce();
+    expect(orchestrationMock.markShown).not.toHaveBeenCalled();
+    expect(screen.getByTestId('cover-card')).toHaveAttribute(
+      'data-settling',
+      'true',
+    );
+    expect(screen.queryByTestId('post-preview-modal')).not.toBeInTheDocument();
+    expect(orchestrationMock.markShown).not.toHaveBeenCalled();
+    expect(orchestrationMock.reset).not.toHaveBeenCalled();
+
+    act(() => {
+      vi.advanceTimersByTime(449);
+    });
+
+    expect(screen.queryByTestId('post-preview-modal')).not.toBeInTheDocument();
+    expect(orchestrationMock.reset).not.toHaveBeenCalled();
+
+    act(() => {
+      vi.advanceTimersByTime(1);
+    });
+
+    expect(screen.getByTestId('post-preview-modal')).toHaveAttribute(
+      'data-open',
+      'true',
+    );
+    expect(orchestrationMock.markShown).toHaveBeenCalledOnce();
+    expect(orchestrationMock.reset).not.toHaveBeenCalled();
+
+    act(() => {
+      vi.advanceTimersByTime(16);
+    });
+
+    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
+  });
+
+  it('opens immediately for reduced motion but resets after the open commit', () => {
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+
+    render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    expect(screen.getByTestId('post-preview-modal')).toHaveAttribute(
+      'data-open',
+      'true',
+    );
+    expect(orchestrationMock.markShown).toHaveBeenCalledOnce();
+    expect(orchestrationMock.reset).not.toHaveBeenCalled();
+
+    act(() => {
+      orchestrationMock.animationFrames.shift()?.(0);
+    });
+
+    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
+  });
+
+  it('resets immediately without mounting the modal when eligibility is denied', () => {
+    orchestrationMock.canShow = false;
+
+    render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    expect(orchestrationMock.recordCompletion).toHaveBeenCalledOnce();
+    expect(orchestrationMock.markShown).not.toHaveBeenCalled();
+    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
+    expect(screen.queryByTestId('post-preview-modal')).not.toBeInTheDocument();
+  });
+
+  it('does not mark shown or reset when unmounted during the cinematic delay', () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false })));
+
+    const { unmount } = render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    unmount();
+    act(() => {
+      vi.advanceTimersByTime(450);
+    });
+
+    expect(orchestrationMock.markShown).not.toHaveBeenCalled();
+    expect(orchestrationMock.reset).not.toHaveBeenCalled();
+  });
+
+  it('does not reopen after a second qualified finish on the same mounted page', () => {
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+
+    render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+    act(() => {
+      orchestrationMock.animationFrames.shift()?.(0);
+    });
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Close post-preview modal' }),
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Complete modal exit' }));
+
+    orchestrationMock.reset.mockClear();
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    expect(orchestrationMock.markShown).toHaveBeenCalledOnce();
+    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
+    expect(screen.queryByTestId('post-preview-modal')).not.toBeInTheDocument();
+  });
+
+  it('records dismissal when the modal requests close', () => {
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+
+    render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Close post-preview modal' }),
+    );
+
+    expect(orchestrationMock.recordDismissal).toHaveBeenCalledOnce();
+    expect(screen.getByTestId('post-preview-modal')).toHaveAttribute(
+      'data-open',
+      'false',
+    );
+  });
+
+  it('resets exactly once when closed after commit but before the reset frame', () => {
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+
+    render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    expect(orchestrationMock.markShown).toHaveBeenCalledOnce();
+    expect(orchestrationMock.reset).not.toHaveBeenCalled();
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Close post-preview modal' }),
+    );
+
+    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
+
+    act(() => {
+      orchestrationMock.animationFrames.shift()?.(0);
+    });
+
+    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
+  });
+
+  it('records dismissal only once for repeated close requests in one exit cycle', () => {
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+
+    render(<LandingIntro />);
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    const closeButton = screen.getByRole('button', {
+      name: 'Close post-preview modal',
+    });
+    fireEvent.click(closeButton);
+    fireEvent.click(closeButton);
+
+    expect(orchestrationMock.recordDismissal).toHaveBeenCalledOnce();
+  });
+
+  it('blocks the shell while mounted and restores completed-intro interaction after exit', () => {
+    gsapMock.enabled = true;
+    gsapMock.reduceMotion = true;
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+
+    const { container } = render(<LandingIntro />);
+    const shell = container.querySelector('[data-landing-shell]');
+
+    expect(shell).not.toHaveAttribute('inert');
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+
+    expect(shell).toHaveAttribute('inert');
+    expect(shell).toHaveAttribute('aria-hidden', 'true');
+    expect(shell?.className).toContain('shell--blocked');
+    expect(shell?.contains(screen.getByTestId('post-preview-modal'))).toBe(false);
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Close post-preview modal' }),
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Complete modal exit' }));
+
+    expect(shell).not.toHaveAttribute('inert');
+    expect(shell).not.toHaveAttribute('aria-hidden');
+    expect(shell?.className).not.toContain('shell--blocked');
+  });
+
+  it('keeps the shell inert after modal exit when the intro has not completed', () => {
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
+
+    const { container } = render(<LandingIntro />);
+    const shell = container.querySelector('[data-landing-shell]');
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Report qualified finish' }),
+    );
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Close post-preview modal' }),
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'Complete modal exit' }));
+
+    expect(shell).toHaveAttribute('inert');
+    expect(shell).not.toHaveAttribute('aria-hidden');
+    expect(shell?.className).not.toContain('shell--blocked');
+  });
+
   it('mounts the final release semantics behind an inert decorative intro', () => {
     const { container } = render(<LandingIntro />);
 
