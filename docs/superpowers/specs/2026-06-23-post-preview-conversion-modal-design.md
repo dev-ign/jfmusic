@@ -30,7 +30,9 @@ The implementation uses page-level orchestration.
 - Track the highest progress ratio reached during real playback.
 - Report a qualifying completion only from WaveSurfer's natural `finish` event.
 - Qualify completion only when peak real-playback progress is at least `0.85`.
-- Reset WaveSurfer to the beginning after reporting completion.
+- Expose a page-controlled reset callback so WaveSurfer returns to the beginning
+  only after the completion transition has preserved the visually complete
+  waveform long enough to register.
 
 Seeking while paused does not count toward peak progress. Reaching 85% without a natural `finish` event does not open the modal.
 
@@ -159,6 +161,11 @@ Actions:
 
 All destinations use `#` placeholders in this implementation. The primary action receives the strongest tonal contrast. Secondary actions use lighter glass pills with clear hover and focus-visible states.
 
+Placeholder actions prevent default navigation so the page does not jump to the
+top. They remain visibly interactive but do not dismiss the modal or claim that
+an external action succeeded. In development, they may log the intended action
+for integration testing.
+
 ## Motion
 
 For standard motion preferences:
@@ -195,7 +202,11 @@ The modal uses:
 - Visible focus indicators with sufficient contrast.
 - Minimum 44px interactive targets.
 
-While open, the underlying landing shell is inert and unavailable to assistive technology and pointer interaction. The modal remains usable by keyboard without relying on animation.
+While open, the underlying landing shell is inert and unavailable to assistive
+technology and pointer interaction. The implementation also applies
+`aria-hidden="true"` and explicit pointer blocking as a fallback for
+environments where native `inert` support is incomplete. The modal remains
+usable by keyboard without relying on animation.
 
 ## Component and file boundaries
 
@@ -236,9 +247,11 @@ Unit and component tests cover:
 - Malformed and unavailable storage fail safely.
 - The modal opens after an eligible completion.
 - The modal does not reopen in the same session.
-- Escape, backdrop click, and action activation dismiss correctly.
+- Escape and backdrop click dismiss correctly.
+- Placeholder action clicks prevent navigation and keep the modal open.
 - Focus is trapped and restored.
-- Underlying content becomes inert while the modal is open.
+- Underlying content becomes inert, aria-hidden, and pointer-blocked while the
+  modal is open.
 - Reduced-motion behavior avoids the full entrance choreography.
 
 Final verification includes:
@@ -250,4 +263,3 @@ Final verification includes:
 - Keyboard-only interaction.
 - Reduced-motion emulation.
 - Visual confirmation that the cover remains faintly visible under the warm glass overlay.
-
