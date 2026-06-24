@@ -28,6 +28,48 @@ This design does not cover:
 - Changes to the post-preview conversion modal.
 - A broad rewrite of the existing intro animation or page composition.
 
+## Design Preservation Principle
+
+The current Caramelo composition is the source of truth.
+
+Implementation must prioritize preserving the existing:
+
+- Visual hierarchy.
+- Stage composition.
+- Artwork scale relationships.
+- Intro experience.
+- Overall premium aesthetic.
+
+Responsive behavior will adapt spacing, sizing, and positioning rather than fundamentally re-laying out the experience. The stage must not become a generic mobile-first stacked layout. The goal is to make the existing composition fit and feel intentional across viewport sizes, not to redesign it.
+
+When a tradeoff is required, decorative elements may adapt more aggressively than core content:
+
+- Atmosphere, glow, disc scale, and whitespace may compress or scale first.
+- Artist signature, cover artwork, navigation, follow actions, metadata, and playback controls retain stronger size and prominence constraints.
+
+The finished experience must feel like the same page across all breakpoints rather than separate desktop and mobile designs.
+
+## Stage Scaling Constraints
+
+The stage must reserve space for the fixed player before calculating its available height.
+
+The cover artwork remains the primary focal point and must not shrink disproportionately compared with surrounding decorative elements.
+
+Text must not scale below comfortable reading sizes. Responsive adjustments should reduce decorative spacing and atmosphere scale before reducing typography.
+
+Interactive controls must remain comfortably touchable and must not be scaled below their intended touch-target sizes.
+
+The responsive system will primarily use:
+
+- `clamp()`.
+- CSS custom properties.
+- Adaptive sizing and positioning.
+- Breakpoint-specific adjustments only where continuous interpolation is insufficient.
+
+The implementation must not use `transform: scale()` on the entire stage.
+
+At representative desktop, short-height desktop, tablet, mobile portrait, and mobile landscape viewport sizes, all primary interactive content must remain visible without requiring page scrolling.
+
 ## Viewport and Responsive Layout
 
 The document must not scroll in normal operation. The page will use a progressive viewport-height declaration:
@@ -40,7 +82,7 @@ height: 100dvh;
 
 `100dvh` is the preferred value on browsers that support dynamic viewport units. The earlier declarations provide fallbacks. The page and document body will use `overflow: hidden`.
 
-The existing 760-by-980 visual stage will remain the composition reference, but it will no longer be rendered as an inflexible 980-pixel-tall canvas. Responsive CSS variables and `clamp()` values will adapt the stage and major element positions to:
+The existing 760-by-980 visual stage will remain the composition reference, but it will no longer be rendered as an inflexible 980-pixel-tall canvas. Responsive CSS variables and `clamp()` values will adapt the stage and major element positions without scaling the entire stage transform. Calculations will first reserve the fixed player's height and safe-area offset, then fit the remaining composition to:
 
 - Available viewport height after reserving space for the fixed player.
 - Available viewport width and horizontal gutters.
