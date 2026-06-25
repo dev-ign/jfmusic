@@ -1,0 +1,91 @@
+<!-- @dsCard group="Components" name="Action Buttons" subtitle="Listen Now · Save Song · Follow · More" viewport='{"width":640,"height":200}' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Action Buttons — Caramelo Components</title>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(to bottom, #f9ecd3, #e4a45e);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 100px;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    transition: opacity .15s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  }
+  .btn:hover { opacity: .88; }
+  .btn--primary {
+    background: #212121;
+    color: #e0d2bd;
+    border-color: #212121;
+  }
+  .btn--outline {
+    background: transparent;
+    color: #212121;
+    border-color: #212121;
+  }
+  .btn--icon-only {
+    padding: 10px 12px;
+  }
+  .spotify-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1DB954;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .heart { font-size: 16px; }
+  .bullseye { font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="action-buttons">
+  <a class="btn btn--primary" href="#" aria-label="Listen to Caramelo on Spotify">
+    <span class="spotify-dot" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M14.08 13.52a.62.62 0 0 1-.86.2c-2.36-1.44-5.33-1.77-8.83-.97a.62.62 0 0 1-.28-1.21c3.83-.88 7.11-.5 9.77 1.12.3.18.4.56.2.86ZM15.22 11a.78.78 0 0 1-1.07.25c-2.7-1.66-6.81-2.14-10-1.17a.78.78 0 0 1-.44-1.49c3.64-1.1 8.17-.57 11.26 1.34.36.22.48.7.25 1.07ZM15.33 8.4c-3.24-1.92-8.59-2.1-11.68-1.16a.93.93 0 1 1-.54-1.78c3.55-1.08 9.45-.87 13.17 1.34a.93.93 0 1 1-.95 1.6Z" fill="white"/></svg>
+    </span>
+    Listen Now
+  </a>
+  <a class="btn btn--outline" href="#" aria-label="Save Caramelo on Spotify">
+    <svg class="heart" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16.5S2.5 12 2.5 6.5A4 4 0 0 1 10 4.06 4 4 0 0 1 17.5 6.5C17.5 12 10 16.5 10 16.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    Save Song
+  </a>
+  <button class="btn btn--outline" aria-label="Follow Jona Ferreira">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="4.5" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="1.5" fill="currentColor"/></svg>
+    Follow
+  </button>
+  <button class="btn btn--outline btn--icon-only" aria-label="More platforms">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="4.5" cy="10" r="1.5" fill="currentColor"/><circle cx="10" cy="10" r="1.5" fill="currentColor"/><circle cx="15.5" cy="10" r="1.5" fill="currentColor"/></svg>
+  </button>
+</div>
+</body>
+</html>

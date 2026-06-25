@@ -1,0 +1,17 @@
+.artist-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+
+.artist-header__name {
+  width: min(100%, clamp(180px, 28vw, 300px));
+  line-height: 0;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}

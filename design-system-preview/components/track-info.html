@@ -1,0 +1,63 @@
+<!-- @dsCard group="Components" name="Track Info" subtitle="Title · Single · duration · year" viewport='{"width":640,"height":200}' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Track Info — Caramelo Components</title>
+<link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Schibsted+Grotesk:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(to bottom, #f9ecd3, #e4a45e);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .track-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .track-info__title {
+    font-family: 'Island Moments', cursive;
+    font-size: 52px;
+    color: #843a09;
+    line-height: 1;
+  }
+  .track-info__meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .track-info__meta-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,.55);
+  }
+  .track-info__meta-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.35);
+  }
+</style>
+</head>
+<body>
+<div class="track-info">
+  <h1 class="track-info__title">Caramelo</h1>
+  <div class="track-info__meta">
+    <span class="track-info__meta-item">Single</span>
+    <span class="track-info__meta-dot" aria-hidden="true"></span>
+    <span class="track-info__meta-item">3:42</span>
+    <span class="track-info__meta-dot" aria-hidden="true"></span>
+    <span class="track-info__meta-item">2025</span>
+  </div>
+</div>
+</body>
+</html>

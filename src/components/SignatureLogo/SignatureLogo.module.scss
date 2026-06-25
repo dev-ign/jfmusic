@@ -1,0 +1,38 @@
+.logo {
+  --signature-brand: #843a09;
+  --signature-draw-stroke-width: 1.45;
+  --signature-reveal-stroke-width: 28;
+  --signature-initial-dash: 2000;
+
+  display: block;
+  overflow: visible;
+
+  :global(.signature-fill-layer) {
+    fill: var(--signature-brand);
+  }
+}
+
+.intro {
+  :global(.signature-fill-layer) {
+    opacity: 0;
+  }
+
+  :global(.signature-draw-path) {
+    fill: none;
+    stroke: var(--signature-brand);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: var(--signature-draw-stroke-width);
+  }
+
+  :global(.signature-reveal-mask-path) {
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: var(--signature-initial-dash);
+    stroke-dashoffset: var(--signature-initial-dash);
+    stroke-linecap: butt;
+    stroke-linejoin: round;
+    stroke-opacity: 0;
+    stroke-width: var(--signature-reveal-stroke-width);
+  }
+}
