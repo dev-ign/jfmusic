@@ -197,9 +197,33 @@
   }
 }
 
+.saveAction {
+  grid-column: 1 / -1;
+}
+
+.socialActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.socialAction {
+  width: 52px;
+  min-height: 52px;
+  padding: 0;
+  color: rgb(var(--modal-cream));
+  background: rgb(var(--modal-cream) / 0.07);
+
+  &:hover {
+    background: rgb(var(--modal-cream) / 0.14);
+    border-color: rgb(var(--modal-gold) / 0.38);
+  }
+}
+
 @media (max-width: 580px) {
   .backdrop {
-    place-items: end center;
+    place-items: center;
     padding: 16px;
   }
 

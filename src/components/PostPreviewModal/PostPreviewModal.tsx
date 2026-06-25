@@ -11,6 +11,9 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 
+import SocialIcon from '@/components/SocialIcons/SocialIcons';
+import { SOCIAL_LINKS, SPOTIFY_URL } from '@/lib/releaseLinks';
+
 import styles from './PostPreviewModal.module.scss';
 
 type PostPreviewModalProps = {
@@ -30,13 +33,6 @@ const FOCUSABLE_SELECTOR = [
   'textarea:not([disabled])',
   '[tabindex]:not([tabindex="-1"])',
 ].join(',');
-
-const ACTIONS = [
-  { label: 'Listen Full Song', primary: true },
-  { label: 'Save Song', primary: false },
-  { label: 'Follow Artist', primary: false },
-  { label: 'Share Track', primary: false },
-] as const;
 
 export default function PostPreviewModal({
   isOpen,
@@ -296,16 +292,6 @@ export default function PostPreviewModal({
     }
   };
 
-  const handleAction = (
-    event: MouseEvent<HTMLAnchorElement>,
-    actionName: string,
-  ) => {
-    event.preventDefault();
-    if (process.env.NODE_ENV !== 'production') {
-      console.info('[post-preview-action]', actionName);
-    }
-  };
-
   if (!isMounted || !isRendered) {
     return null;
   }
@@ -337,21 +323,37 @@ export default function PostPreviewModal({
         </div>
 
         <div className={styles.actions}>
-          {ACTIONS.map((action) => (
+          <a
+            ref={primaryActionRef}
+            href={SPOTIFY_URL}
+            className={`${styles.action} ${styles.primaryAction}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Listen Full Song
+          </a>
+          <a
+            href={SPOTIFY_URL}
+            className={`${styles.action} ${styles.secondaryAction} ${styles.saveAction}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Save Song
+          </a>
+          <div className={styles.socialActions} aria-label="Follow Jona Ferreira">
+            {SOCIAL_LINKS.map((social) => (
             <a
-              key={action.label}
-              ref={action.primary ? primaryActionRef : undefined}
-              href="#"
-              className={
-                action.primary
-                  ? `${styles.action} ${styles.primaryAction}`
-                  : `${styles.action} ${styles.secondaryAction}`
-              }
-              onClick={(event) => handleAction(event, action.label)}
+              key={social.label}
+              href={social.href}
+              className={`${styles.action} ${styles.socialAction}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
             >
-              {action.label}
+              <SocialIcon name={social.icon} />
             </a>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>,

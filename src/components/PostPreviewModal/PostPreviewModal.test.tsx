@@ -3,6 +3,8 @@ import { readFileSync } from 'node:fs';
 import { renderToString } from 'react-dom/server';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
+import { SOCIAL_LINKS, SPOTIFY_URL } from '@/lib/releaseLinks';
+
 import PostPreviewModal from './PostPreviewModal';
 
 function dispatchTransitionEnd(element: Element, propertyName: string) {
@@ -57,19 +59,26 @@ describe('PostPreviewModal', () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: 'Listen Full Song' }),
-    ).toHaveAttribute('href', '#');
+    ).toHaveAttribute('href', SPOTIFY_URL);
     expect(screen.getByRole('link', { name: 'Save Song' })).toHaveAttribute(
       'href',
-      '#',
+      SPOTIFY_URL,
     );
-    expect(screen.getByRole('link', { name: 'Follow Artist' })).toHaveAttribute(
-      'href',
-      '#',
-    );
-    expect(screen.getByRole('link', { name: 'Share Track' })).toHaveAttribute(
-      'href',
-      '#',
-    );
+
+    for (const social of SOCIAL_LINKS) {
+      const link = screen.getByRole('link', { name: social.label });
+      expect(link).toHaveAttribute('href', social.href);
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+      expect(link.querySelector('svg')).not.toBeNull();
+    }
+
+    expect(
+      screen.queryByRole('link', { name: 'Follow Artist' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('link', { name: 'Share Track' }),
+    ).not.toBeInTheDocument();
   });
 
   it('moves initial focus to the primary action', () => {
@@ -112,7 +121,7 @@ describe('PostPreviewModal', () => {
     render(<PostPreviewModal isOpen onRequestClose={vi.fn()} />);
 
     const first = screen.getByRole('link', { name: 'Listen Full Song' });
-    const last = screen.getByRole('link', { name: 'Share Track' });
+    const last = screen.getByRole('link', { name: 'TikTok' });
 
     last.focus();
     fireEvent.keyDown(screen.getByRole('dialog'), { key: 'Tab' });
@@ -125,41 +134,6 @@ describe('PostPreviewModal', () => {
     });
     expect(last).toHaveFocus();
   });
-
-  it.each([
-    'Listen Full Song',
-    'Save Song',
-    'Follow Artist',
-    'Share Track',
-  ])(
-    'keeps the %s placeholder action inert without dismissing',
-    (actionName) => {
-      const onRequestClose = vi.fn();
-      const infoSpy = vi.spyOn(console, 'info').mockImplementation(() => {});
-      render(
-        <PostPreviewModal isOpen onRequestClose={onRequestClose} />,
-      );
-
-      const action = screen.getByRole('link', { name: actionName });
-      const clickEvent = new MouseEvent('click', {
-        bubbles: true,
-        cancelable: true,
-      });
-
-      action.dispatchEvent(clickEvent);
-
-      expect(clickEvent.defaultPrevented).toBe(true);
-      expect(onRequestClose).not.toHaveBeenCalled();
-      expect(screen.getByRole('dialog')).toBeInTheDocument();
-
-      if (process.env.NODE_ENV !== 'production') {
-        expect(infoSpy).toHaveBeenCalledWith(
-          '[post-preview-action]',
-          actionName,
-        );
-      }
-    },
-  );
 
   it('exits only from the surface transform transition and completes once', () => {
     const onExited = vi.fn();
@@ -544,5 +518,20 @@ describe('PostPreviewModal', () => {
     expect(primaryRule).toMatch(/color:\s*rgb\(var\(--modal-cream\)\)/);
     expect(primaryRule).toMatch(/background:\s*rgb\([0-5]?\d\s/);
     expect(primaryRule).not.toMatch(/linear-gradient/);
+  });
+
+  it('keeps the modal centered on responsive viewports', () => {
+    const css = readFileSync(
+      'src/components/PostPreviewModal/PostPreviewModal.module.scss',
+      'utf8',
+    );
+    const mobileRule = css.match(
+      /@media\s*\(max-width:\s*580px\)\s*\{([\s\S]*?)\n\}/,
+    )?.[1];
+
+    expect(mobileRule).toMatch(
+      /\.backdrop\s*\{[\s\S]*?place-items:\s*center/,
+    );
+    expect(mobileRule).not.toMatch(/place-items:\s*end center/);
   });
 });

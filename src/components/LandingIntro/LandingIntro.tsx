@@ -14,12 +14,18 @@ import AudioPreview from '@/components/AudioPreview/AudioPreview';
 import CoverCard from '@/components/CoverCard/CoverCard';
 import PostPreviewModal from '@/components/PostPreviewModal/PostPreviewModal';
 import SignatureLogo from '@/components/SignatureLogo/SignatureLogo';
+import SocialIcon from '@/components/SocialIcons/SocialIcons';
 import { MEDIA_ENDPOINTS } from '@/lib/mediaEndpoints';
 import {
   markPostPreviewPromptShown,
   recordPostPreviewDismissal,
   recordPreviewCompletion,
 } from '@/lib/postPreviewPrompt';
+import {
+  SOCIAL_LINKS,
+  SPOTIFY_URL,
+  STREAMING_LINKS,
+} from '@/lib/releaseLinks';
 
 import { calculatePathSchedule, calculateSignatureTransform } from './animationGeometry';
 import styles from './LandingIntro.module.scss';
@@ -37,96 +43,6 @@ const POST_PREVIEW_SETTLE_MS = 450;
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 
 type PageMode = 'cover' | 'credits' | 'lyrics';
-
-type SocialLink = {
-  label: string;
-  href: string;
-  icon: 'instagram' | 'tiktok' | 'youtube';
-};
-
-type StreamingLink = {
-  label: string;
-  href: string;
-};
-
-const SPOTIFY_URL =
-  'https://open.spotify.com/track/2sDSnFmxyLvWgXQZm5Mdt2?si=6c58b7c468d24c4d';
-
-const SOCIAL_LINKS = [
-  {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/jonaferreira',
-    icon: 'instagram',
-  },
-  {
-    label: 'TikTok',
-    href: 'https://www.tiktok.com/@jonafmusic',
-    icon: 'tiktok',
-  },
-  {
-    label: 'YouTube',
-    href: 'https://www.youtube.com/channel/UCWa1kPIczNX6qKZ8hMbNdsg',
-    icon: 'youtube',
-  },
-] as const satisfies readonly SocialLink[];
-
-const STREAMING_LINKS = [
-  {
-    label: 'Apple Music',
-    href: 'https://music.apple.com/us/album/caramelo/6773485931?i=6773485933',
-  },
-  { label: 'Spotify', href: SPOTIFY_URL },
-  {
-    label: 'YouTube',
-    href: 'https://www.youtube.com/watch?v=sb6EryPbY_A&list=OLAK5uy_lsz4B2564DZiRfBbBdES-dz5YEkTmlTn0',
-  },
-  {
-    label: 'Amazon Music',
-    href: 'https://amazon.com/music/player/albums/B0H31RQSRH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_fE6GMFJbRU5FpVcsEpHhibWDN',
-  },
-  { label: 'Tidal', href: 'https://tidal.com/track/528205807/u' },
-] as const satisfies readonly StreamingLink[];
-
-function InstagramIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#f4e7cf"
-      strokeWidth="1.8"
-      aria-hidden="true"
-    >
-      <rect x="4" y="4" width="16" height="16" rx="5" />
-      <circle cx="12" cy="12" r="3.8" />
-      <circle cx="17" cy="7" r="1" fill="#f4e7cf" stroke="none" />
-    </svg>
-  );
-}
-
-function TikTokIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="#f4e7cf"
-      aria-hidden="true"
-    >
-      <path d="M14 4c.4 2.4 1.9 3.9 4.2 4.1v2.4c-1.5 0-2.9-.5-4.1-1.3v5.6c0 3-2.4 5.2-5.3 5.2A5 5 0 0 1 6 10.7c.5 0 1 .1 1.5.2v2.5a2.4 2.4 0 0 0-1.5-.4 2.5 2.5 0 1 0 2.7 2.5V4H14z" />
-    </svg>
-  );
-}
-
-function YouTubeIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="6.6" width="18" height="10.8" rx="3.2" fill="#f4e7cf" />
-      <path d="M10.5 9.4v5.2L15 12z" fill="#1f1f1f" />
-    </svg>
-  );
-}
 
 export default function LandingIntro() {
   // ── GSAP intro animation refs ──────────────────────────────────────────
@@ -1023,9 +939,7 @@ export default function LandingIntro() {
                     tabIndex={-1}
                     onClick={() => setIsFollowMenuOpen(false)}
                   >
-                    {link.icon === 'instagram' ? <InstagramIcon /> : null}
-                    {link.icon === 'tiktok' ? <TikTokIcon /> : null}
-                    {link.icon === 'youtube' ? <YouTubeIcon /> : null}
+                    <SocialIcon name={link.icon} />
                     {link.label}
                   </a>
                 ))}

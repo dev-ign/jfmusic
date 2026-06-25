@@ -1,5 +1,4 @@
 {
-  "/api/media/cover/route": "app/api/media/cover/route.js",
   "/api/media/preview/route": "app/api/media/preview/route.js",
   "/icon/route": "app/icon/route.js",
   "/page": "app/page.js"
