@@ -7,8 +7,8 @@
 
 .AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn {
   background: var(--color-player-bg);
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
   color: var(--color-player-icon);
   cursor: pointer;
   border: none;

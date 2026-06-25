@@ -11,7 +11,7 @@
   --cover-offset-y: 268px;
   --title-offset-y: 452px;
   --disc-offset-y: 635px;
-  --nav-offset-y: 35.5%;
+  --nav-offset-y: 35%;
   --control-gap: 28px;
   width: 760px;
   height: 980px;
@@ -74,7 +74,7 @@
 
 .LandingIntro-module-scss-module__0vJwBG__disc-glow {
   left: 50%;
-  top: calc(var(--disc-offset-y) - 150px);
+  top: calc(var(--disc-offset-y) + var(--mobile-content-shift, 0px) - 150px);
   filter: blur(8px);
   z-index: 1;
   pointer-events: none;
@@ -88,7 +88,7 @@
 
 .LandingIntro-module-scss-module__0vJwBG__ground-shadow {
   left: 50%;
-  top: calc(var(--disc-offset-y) + 68px);
+  top: calc(var(--disc-offset-y) + var(--mobile-content-shift, 0px) + 68px);
   filter: blur(26px);
   z-index: 2;
   pointer-events: none;
@@ -102,7 +102,7 @@
 
 .LandingIntro-module-scss-module__0vJwBG__disc-wrap {
   left: 50%;
-  top: var(--disc-offset-y);
+  top: calc(var(--disc-offset-y) + var(--mobile-content-shift, 0px));
   perspective: 1400px;
   perspective-origin: 50%;
   z-index: 3;
@@ -263,7 +263,7 @@
 
 .LandingIntro-module-scss-module__0vJwBG__track-meta-outer {
   left: 0;
-  top: var(--title-offset-y);
+  top: calc(var(--title-offset-y) + var(--mobile-content-shift, 0px));
   text-align: center;
   z-index: 13;
   pointer-events: auto;
@@ -294,6 +294,9 @@
 }
 
 .LandingIntro-module-scss-module__0vJwBG__lyrics {
+  --lyrics-offset-y: 140px;
+  left: 50%;
+  top: calc(var(--lyrics-offset-y) + var(--mobile-content-shift, 0px));
   z-index: 16;
   width: 412px;
   height: 380px;
@@ -309,8 +312,6 @@
   transition: opacity .55s .1s, transform .8s cubic-bezier(.34, .01, .2, 1) .1s;
   display: flex;
   position: absolute;
-  top: 140px;
-  left: 50%;
   transform: translate(-50%)translateX(150px)scale(.96);
 }
 
@@ -361,12 +362,14 @@
 
 .LandingIntro-module-scss-module__0vJwBG__lyrics__body {
   font-family: var(--font-sans);
-  color: #281808b8;
+  color: #261607d1;
   text-align: center;
+  text-shadow: 0 1px #fff8e585;
   flex-direction: column;
   gap: 17px;
   padding: 2px 0;
   font-size: 13.5px;
+  font-weight: 650;
   line-height: 1.65;
   display: flex;
 }
@@ -439,7 +442,7 @@
 .LandingIntro-module-scss-module__0vJwBG__disc-nav-band__btn {
   color: #3f2108a3;
   min-width: 82px;
-  font: 650 9px/1 var(--font-sans);
+  font: 650 10px/1 var(--font-sans);
   letter-spacing: .17em;
   text-transform: uppercase;
   cursor: pointer;
@@ -482,7 +485,7 @@
 
 .LandingIntro-module-scss-module__0vJwBG__player-row {
   left: 50%;
-  top: calc(var(--disc-offset-y) + var(--disc-visible-radius-y) + var(--control-gap));
+  top: calc(var(--disc-offset-y) + var(--mobile-content-shift, 0px) + var(--disc-visible-radius-y) + var(--control-gap));
   z-index: 14;
   align-items: center;
   gap: 14px;
@@ -657,7 +660,7 @@
     --cover-offset-y: 258px;
     --title-offset-y: 442px;
     --disc-offset-y: 620px;
-    --nav-offset-y: 36%;
+    --nav-offset-y: 34.5%;
     --control-gap: 24px;
   }
 }
@@ -669,30 +672,45 @@
     --cover-offset-y: 250px;
     --title-offset-y: 425px;
     --disc-offset-y: 595px;
-    --nav-offset-y: 36%;
+    --nav-offset-y: 34%;
     --control-gap: 20px;
   }
 }
 
 @media (max-width: 700px) {
   .LandingIntro-module-scss-module__0vJwBG__stage-scale {
+    --mobile-content-shift: 20px;
     --stage-scale: .82;
     --stage-offset-y: max(12px, env(safe-area-inset-top));
     --cover-offset-y: 286px;
     --title-offset-y: 480px;
     --disc-offset-y: 710px;
-    --nav-offset-y: 34%;
-    --control-gap: 26px;
+    --nav-offset-y: 33.5%;
+    --control-gap: 28px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__cover-float-wrap {
+    transform: translate(-50%, -50%)scale(1.2);
   }
 
   .LandingIntro-module-scss-module__0vJwBG__btn-icon {
-    width: 52px;
-    height: 52px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__btn-icon svg {
+    width: 23px;
+    height: 23px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn {
-    width: 64px;
-    height: 64px;
+    width: 76px;
+    height: 76px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn svg {
+    width: 29px;
+    height: 29px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__disc-nav-band {
@@ -703,7 +721,12 @@
   .LandingIntro-module-scss-module__0vJwBG__disc-nav-band__btn {
     min-width: 88px;
     padding: 7px 13px;
-    font-size: 10.5px;
+    font-size: 11px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__lyrics {
+    --lyrics-offset-y: 130px;
+    height: 460px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__lyrics__body {
@@ -713,31 +736,63 @@
 
 @media (max-width: 560px) {
   .LandingIntro-module-scss-module__0vJwBG__stage-scale {
+    --mobile-content-shift: 22px;
     --stage-scale: .7;
     --cover-offset-y: 294px;
     --title-offset-y: 490px;
     --disc-offset-y: 735px;
-    --control-gap: 24px;
+    --nav-offset-y: 32.5%;
+    --control-gap: 29px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__cover-float-wrap {
-    transform: translate(-50%, -50%)scale(1.1);
+    transform: translate(-50%, -50%)scale(1.3);
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__btn-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__btn-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn {
+    width: 86px;
+    height: 86px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__disc-nav-band__btn {
+    font-size: 11.5px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__lyrics {
+    --lyrics-offset-y: 125px;
+    height: 470px;
   }
 }
 
 @media (max-width: 430px) {
   .LandingIntro-module-scss-module__0vJwBG__stage-scale {
+    --mobile-content-shift: 50px;
     --stage-scale: .62;
     --stage-offset-y: max(18px, env(safe-area-inset-top));
     --cover-offset-y: 300px;
     --title-offset-y: 500px;
     --disc-offset-y: 760px;
-    --nav-offset-y: 32%;
-    --control-gap: 22px;
+    --nav-offset-y: 31.5%;
+    --control-gap: 30px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__cover-float-wrap {
-    transform: translate(-50%, -50%)scale(1.15);
+    transform: translate(-50%, -50%)scale(1.4);
   }
 
   .LandingIntro-module-scss-module__0vJwBG__disc-nav-band {
@@ -748,22 +803,32 @@
   .LandingIntro-module-scss-module__0vJwBG__disc-nav-band__btn {
     min-width: 82px;
     padding: 8px 12px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__btn-icon {
-    width: 60px;
-    height: 60px;
-  }
-
-  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn {
     width: 72px;
     height: 72px;
   }
 
+  .LandingIntro-module-scss-module__0vJwBG__btn-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn {
+    width: 96px;
+    height: 96px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn svg {
+    width: 36px;
+    height: 36px;
+  }
+
   .LandingIntro-module-scss-module__0vJwBG__lyrics {
-    height: 270px;
-    top: 140px;
+    --lyrics-offset-y: 120px;
+    height: 480px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__lyrics__body {
@@ -774,22 +839,52 @@
 
 @media (max-width: 380px) {
   .LandingIntro-module-scss-module__0vJwBG__stage-scale {
+    --mobile-content-shift: 50px;
     --stage-scale: .57;
     --stage-offset-y: max(16px, env(safe-area-inset-top));
     --cover-offset-y: 292px;
     --title-offset-y: 486px;
     --disc-offset-y: 740px;
-    --nav-offset-y: 32%;
-    --control-gap: 20px;
+    --nav-offset-y: 31%;
+    --control-gap: 31px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__cover-float-wrap {
+    transform: translate(-50%, -50%)scale(1.4);
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__btn-icon {
+    width: 76px;
+    height: 76px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__btn-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn {
+    width: 100px;
+    height: 100px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__player-row .audio-preview__play-btn svg {
+    width: 38px;
+    height: 38px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__disc-nav-band__btn {
     min-width: 80px;
-    font-size: 11px;
+    font-size: 12.5px;
+  }
+
+  .LandingIntro-module-scss-module__0vJwBG__lyrics {
+    --lyrics-offset-y: 115px;
+    height: 480px;
   }
 
   .LandingIntro-module-scss-module__0vJwBG__lyrics__body {
-    font-size: 15px;
+    font-size: 15.75px;
   }
 }
 

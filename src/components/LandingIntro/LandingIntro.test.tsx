@@ -453,7 +453,7 @@ describe('LandingIntro', () => {
       /\.stage-scale\s*\{[\s\S]*transform:[^;]*scale\(var\(--stage-scale\)\)/,
     );
     expect(css).toMatch(
-      /\.disc-wrap\s*\{[\s\S]*top:\s*var\(--disc-offset-y\)/,
+      /\.disc-wrap\s*\{[\s\S]*top:\s*calc\([\s\S]*var\(--disc-offset-y\)[\s\S]*var\(--mobile-content-shift,\s*0px\)/,
     );
   });
 
@@ -526,6 +526,79 @@ describe('LandingIntro', () => {
     expect(
       container.querySelector('[data-heart-control]'),
     ).not.toBeNull();
+  });
+
+  it('scales mobile artwork, controls, navigation, and Lyrics proportionally', () => {
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+    const lyricsBodyRule = css.match(/\.lyrics__body\s*\{([^}]*)\}/)?.[1];
+
+    expect(lyricsBodyRule).toMatch(/font-weight:\s*650/);
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*700px\)[\s\S]*?\.cover-float-wrap\s*\{[\s\S]*?scale\(1\.2\)/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*560px\)[\s\S]*?\.cover-float-wrap\s*\{[\s\S]*?scale\(1\.3\)/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?\.cover-float-wrap\s*\{[\s\S]*?scale\(1\.4\)/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?--control-gap:\s*30px[\s\S]*?\.btn-icon\s*\{[\s\S]*?width:\s*72px[\s\S]*?height:\s*72px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?\.disc-nav-band__btn\s*\{[\s\S]*?font-size:\s*12px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?\.lyrics\s*\{[\s\S]*?height:\s*480px/,
+    );
+  });
+
+  it('shifts the mobile composition below the cover without changing desktop', () => {
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+    const baseStageRule = css.match(/\.stage-scale\s*\{([^}]*)\}/)?.[1];
+
+    expect(baseStageRule).not.toMatch(/--mobile-content-shift/);
+    expect(css).toMatch(
+      /\.track-meta-outer\s*\{[\s\S]*?top:\s*calc\([\s\S]*?var\(--title-offset-y\)[\s\S]*?var\(--mobile-content-shift,\s*0px\)[\s\S]*?\)/,
+    );
+    expect(css).toMatch(
+      /\.disc-wrap\s*\{[\s\S]*?top:\s*calc\([\s\S]*?var\(--disc-offset-y\)[\s\S]*?var\(--mobile-content-shift,\s*0px\)[\s\S]*?\)/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*700px\)[\s\S]*?--mobile-content-shift:\s*20px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*560px\)[\s\S]*?--mobile-content-shift:\s*22px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?--mobile-content-shift:\s*50px/,
+    );
+  });
+
+  it('enlarges only the responsive play button and its icon proportionally', () => {
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*700px\)[\s\S]*?audio-preview__play-btn\)\s*\{[\s\S]*?width:\s*76px[\s\S]*?height:\s*76px[\s\S]*?audio-preview__play-btn svg\)\s*\{[\s\S]*?width:\s*29px[\s\S]*?height:\s*29px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*560px\)[\s\S]*?audio-preview__play-btn\)\s*\{[\s\S]*?width:\s*86px[\s\S]*?height:\s*86px[\s\S]*?audio-preview__play-btn svg\)\s*\{[\s\S]*?width:\s*32px[\s\S]*?height:\s*32px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?audio-preview__play-btn\)\s*\{[\s\S]*?width:\s*96px[\s\S]*?height:\s*96px[\s\S]*?audio-preview__play-btn svg\)\s*\{[\s\S]*?width:\s*36px[\s\S]*?height:\s*36px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*380px\)[\s\S]*?audio-preview__play-btn\)\s*\{[\s\S]*?width:\s*100px[\s\S]*?height:\s*100px[\s\S]*?audio-preview__play-btn svg\)\s*\{[\s\S]*?width:\s*38px[\s\S]*?height:\s*38px/,
+    );
   });
 
   it('reserves an eligible finish, then marks and resets only after the modal commits open', () => {
