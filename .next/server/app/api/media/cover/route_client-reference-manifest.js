@@ -1,0 +1,1 @@
+globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/api/media/cover/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"/Users/jonathanferreira/Documents/app_projects/digital-music/src/app/api/media/cover/route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}};

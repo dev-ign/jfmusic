@@ -1,0 +1,367 @@
+/* [project]/src/app/page.module.scss.module.css [app-client] (css) */
+.page-module-scss-module__rcUngW__release-page {
+  place-items: center;
+  min-height: 100svh;
+  display: grid;
+  overflow: hidden;
+}
+
+.page-module-scss-module__rcUngW__release-shell {
+  grid-template-rows: auto auto auto auto auto;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(10px, 1.8vh, 24px);
+  width: min(100%, 1200px);
+  min-height: 100svh;
+  padding: clamp(16px, 3vh, 48px) clamp(20px, 4vw, 64px);
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .page-module-scss-module__rcUngW__release-page {
+    place-items: start center;
+    overflow: auto;
+  }
+
+  .page-module-scss-module__rcUngW__release-shell {
+    align-content: start;
+    gap: clamp(12px, 3vw, 20px);
+    min-height: 100svh;
+    padding-block: 32px;
+  }
+}
+
+/* [project]/src/components/SignatureLogo/SignatureLogo.module.scss.module.css [app-client] (css) */
+.SignatureLogo-module-scss-module__cIcHmG__logo {
+  --signature-brand: #843a09;
+  --signature-draw-stroke-width: 6;
+  display: block;
+  overflow: visible;
+}
+
+.SignatureLogo-module-scss-module__cIcHmG__logo .signature-fill-layer {
+  fill: var(--signature-brand);
+}
+
+.SignatureLogo-module-scss-module__cIcHmG__intro .signature-fill-layer {
+  fill: #0000;
+}
+
+.SignatureLogo-module-scss-module__cIcHmG__intro .signature-draw-path {
+  fill: none;
+  stroke: var(--signature-brand);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--signature-draw-stroke-width);
+}
+
+/* [project]/src/components/ArtistHeader/ArtistHeader.module.scss.module.css [app-client] (css) */
+.ArtistHeader-module-scss-module__NT5Naa__artist-header {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.ArtistHeader-module-scss-module__NT5Naa__artist-header__name {
+  width: min(100%, clamp(180px, 28vw, 300px));
+  line-height: 0;
+}
+
+.ArtistHeader-module-scss-module__NT5Naa__artist-header__name svg {
+  width: 100%;
+  height: auto;
+}
+
+.ArtistHeader-module-scss-module__NT5Naa__artist-header__meta {
+  font-family: var(--font-meta);
+  color: var(--color-text-secondary);
+  letter-spacing: 0;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+}
+
+.ArtistHeader-module-scss-module__NT5Naa__artist-header__dot {
+  background-color: var(--color-text-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+}
+
+.ArtistHeader-module-scss-module__NT5Naa__sr-only {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+/* [project]/src/components/CoverCard/CoverCard.module.scss.module.css [app-client] (css) */
+.CoverCard-module-scss-module__vG487q__cover-card {
+  width: clamp(300px, 50vh, 500px);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .CoverCard-module-scss-module__vG487q__cover-card {
+    width: clamp(260px, 72vw, 360px);
+  }
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card {
+  aspect-ratio: 1;
+  border-radius: var(--radius-cover);
+  box-shadow: var(--shadow-cover);
+  -webkit-user-select: none;
+  user-select: none;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__image {
+  object-fit: cover;
+  border-radius: var(--radius-cover);
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__pills {
+  align-items: center;
+  gap: 6px;
+  display: flex;
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__pill {
+  background: var(--color-pill-bg);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  color: #fff;
+  letter-spacing: .12px;
+  white-space: nowrap;
+  align-items: center;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  display: inline-flex;
+}
+
+/* [project]/src/components/TrackInfo/TrackInfo.module.scss.module.css [app-client] (css) */
+.TrackInfo-module-scss-module__0N3IJW__track-info {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  display: flex;
+}
+
+.TrackInfo-module-scss-module__0N3IJW__track-info__title {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  letter-spacing: .24px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.TrackInfo-module-scss-module__0N3IJW__track-info__meta {
+  font-family: var(--font-meta);
+  color: var(--color-text-secondary);
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+}
+
+.TrackInfo-module-scss-module__0N3IJW__track-info__dot {
+  background-color: var(--color-text-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+}
+
+/* [project]/src/components/AudioPreview/AudioPreview.module.scss.module.css [app-client] (css) */
+.AudioPreview-module-scss-module__gI_meq__audio-preview {
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: min(421px, 70vw);
+  display: flex;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn {
+  background: var(--color-player-bg);
+  width: 40px;
+  height: 40px;
+  color: var(--color-player-icon);
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .15s;
+  display: flex;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn:not(:disabled):hover {
+  opacity: .85;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn:focus-visible {
+  outline: 2px solid var(--color-player-bg);
+  outline-offset: 3px;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__waveform-area {
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+  min-width: 0;
+  display: flex;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__waveform {
+  width: 100%;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__waveform--loading {
+  opacity: .4;
+  animation: 1.4s ease-in-out infinite AudioPreview-module-scss-module__gI_meq__pulse;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__time {
+  font-family: var(--font-meta);
+  color: var(--color-text-secondary);
+  justify-content: space-between;
+  padding: 0 2px;
+  font-size: 10px;
+  display: flex;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__error {
+  font-family: var(--font-meta);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+@keyframes AudioPreview-module-scss-module__gI_meq__pulse {
+  0%, 100% {
+    opacity: .4;
+  }
+
+  50% {
+    opacity: .7;
+  }
+}
+
+/* [project]/src/components/ActionButtons/ActionButtons.module.scss.module.css [app-client] (css) */
+.ActionButtons-module-scss-module__GdiHYG__action-buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(16px, 4vw, 38px);
+  display: flex;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn {
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  letter-spacing: .16px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity .15s;
+  display: inline-flex;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn:focus-visible {
+  outline: 2px solid var(--color-btn-primary-bg);
+  outline-offset: 3px;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn:hover {
+  opacity: .8;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--primary {
+  background: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--outline {
+  border: 1px solid var(--color-btn-outline-border);
+  color: var(--color-btn-outline-text);
+  background: none;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--icon-only {
+  padding: 12px;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__group {
+  position: relative;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__menu {
+  z-index: 10;
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid #00000014;
+  border-radius: 12px;
+  min-width: 160px;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  overflow: hidden;
+  transform: translateX(-50%);
+  box-shadow: 0 8px 32px #0000001f;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__menu-item {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background .1s;
+  display: block;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__menu-item:hover {
+  background: #0000000a;
+}
+
+/*# sourceMappingURL=src_0h6x_f5._.css.map*/

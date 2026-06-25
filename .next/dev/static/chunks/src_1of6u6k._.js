@@ -1,0 +1,1687 @@
+(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/src/components/ActionButtons/ActionButtons.module.scss [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "action-buttons": "ActionButtons-module-scss-module__GdiHYG__action-buttons",
+  "action-buttons__btn": "ActionButtons-module-scss-module__GdiHYG__action-buttons__btn",
+  "action-buttons__btn--icon-only": "ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--icon-only",
+  "action-buttons__btn--outline": "ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--outline",
+  "action-buttons__btn--primary": "ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--primary",
+  "action-buttons__group": "ActionButtons-module-scss-module__GdiHYG__action-buttons__group",
+  "action-buttons__menu": "ActionButtons-module-scss-module__GdiHYG__action-buttons__menu",
+  "action-buttons__menu-item": "ActionButtons-module-scss-module__GdiHYG__action-buttons__menu-item",
+});
+}),
+"[project]/src/components/ActionButtons/ActionButtons.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>ActionButtons
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/ActionButtons/ActionButtons.module.scss [app-client] (css module)");
+;
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
+'use client';
+;
+;
+function SpotifyIcon() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 20 20",
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "10",
+                cy: "10",
+                r: "10",
+                fill: "#1DB954"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                d: "M14.08 13.52a.62.62 0 0 1-.86.2c-2.36-1.44-5.33-1.77-8.83-.97a.62.62 0 0 1-.28-1.21c3.83-.88 7.11-.5 9.77 1.12.3.18.4.56.2.86ZM15.22 11a.78.78 0 0 1-1.07.25c-2.7-1.66-6.81-2.14-10-1.17a.78.78 0 0 1-.44-1.49c3.64-1.1 8.17-.57 11.26 1.34.36.22.48.7.25 1.07ZM15.33 8.4c-3.24-1.92-8.59-2.1-11.68-1.16a.93.93 0 1 1-.54-1.78c3.55-1.08 9.45-.87 13.17 1.34a.93.93 0 1 1-.95 1.6Z",
+                fill: "white"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 10,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+        lineNumber: 8,
+        columnNumber: 5
+    }, this);
+}
+_c = SpotifyIcon;
+function HeartIcon() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 20 20",
+        fill: "none",
+        "aria-hidden": "true",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+            d: "M10 16.5S2.5 12 2.5 6.5A4 4 0 0 1 10 4.06 4 4 0 0 1 17.5 6.5C17.5 12 10 16.5 10 16.5Z",
+            stroke: "currentColor",
+            strokeWidth: "1.5",
+            strokeLinejoin: "round"
+        }, void 0, false, {
+            fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+            lineNumber: 21,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+        lineNumber: 20,
+        columnNumber: 5
+    }, this);
+}
+_c1 = HeartIcon;
+function BullseyeIcon() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 20 20",
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "10",
+                cy: "10",
+                r: "8",
+                stroke: "currentColor",
+                strokeWidth: "1.5"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 34,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "10",
+                cy: "10",
+                r: "4.5",
+                stroke: "currentColor",
+                strokeWidth: "1.5"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 35,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "10",
+                cy: "10",
+                r: "1.5",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 36,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+        lineNumber: 33,
+        columnNumber: 5
+    }, this);
+}
+_c2 = BullseyeIcon;
+function EllipsisIcon() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 20 20",
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "4.5",
+                cy: "10",
+                r: "1.5",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 44,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "10",
+                cy: "10",
+                r: "1.5",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 45,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                cx: "15.5",
+                cy: "10",
+                r: "1.5",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 46,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+        lineNumber: 43,
+        columnNumber: 5
+    }, this);
+}
+_c3 = EllipsisIcon;
+function InlineMenu({ items, onClose }) {
+    _s();
+    const menuRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "InlineMenu.useEffect": ()=>{
+            function handleClickOutside(e) {
+                if (menuRef.current && !menuRef.current.contains(e.target)) {
+                    onClose();
+                }
+            }
+            document.addEventListener('mousedown', handleClickOutside);
+            return ({
+                "InlineMenu.useEffect": ()=>document.removeEventListener('mousedown', handleClickOutside)
+            })["InlineMenu.useEffect"];
+        }
+    }["InlineMenu.useEffect"], [
+        onClose
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        ref: menuRef,
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__menu'],
+        role: "menu",
+        children: items.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                href: item.href,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__menu-item'],
+                target: "_blank",
+                rel: "noopener noreferrer",
+                role: "menuitem",
+                onClick: onClose,
+                children: item.label
+            }, item.label, false, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 73,
+                columnNumber: 9
+            }, this))
+    }, void 0, false, {
+        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+        lineNumber: 71,
+        columnNumber: 5
+    }, this);
+}
+_s(InlineMenu, "lbfKxozlpk19p2tUpYavRIkbEU0=");
+_c4 = InlineMenu;
+const FOLLOW_LINKS = [
+    {
+        label: 'Instagram',
+        href: '#'
+    },
+    {
+        label: 'TikTok',
+        href: '#'
+    },
+    {
+        label: 'Spotify',
+        href: '#'
+    },
+    {
+        label: 'YouTube',
+        href: '#'
+    }
+];
+const MORE_LINKS = [
+    {
+        label: 'Apple Music',
+        href: '#'
+    },
+    {
+        label: 'YouTube Music',
+        href: '#'
+    },
+    {
+        label: 'Tidal',
+        href: '#'
+    },
+    {
+        label: 'Amazon Music',
+        href: '#'
+    }
+];
+function ActionButtons() {
+    _s1();
+    const [followOpen, setFollowOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [moreOpen, setMoreOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons'],
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                href: "#",
+                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn']} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn--primary']}`,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "aria-label": "Listen to Caramelo on Spotify",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SpotifyIcon, {}, void 0, false, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 116,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "Listen Now"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 117,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 109,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                href: "#",
+                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn']} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn--outline']}`,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                "aria-label": "Save Caramelo on Spotify",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(HeartIcon, {}, void 0, false, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 127,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "Save Song"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 128,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 120,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__group'],
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn']} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn--outline']}`,
+                        onClick: ()=>{
+                            setFollowOpen((v)=>!v);
+                            setMoreOpen(false);
+                        },
+                        "aria-expanded": followOpen,
+                        "aria-haspopup": "menu",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(BullseyeIcon, {}, void 0, false, {
+                                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                                lineNumber: 141,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "Follow"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                                lineNumber: 142,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 132,
+                        columnNumber: 9
+                    }, this),
+                    followOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InlineMenu, {
+                        items: FOLLOW_LINKS,
+                        onClose: ()=>setFollowOpen(false)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 145,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 131,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__group'],
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn']} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn--outline']} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['action-buttons__btn--icon-only']}`,
+                        onClick: ()=>{
+                            setMoreOpen((v)=>!v);
+                            setFollowOpen(false);
+                        },
+                        "aria-expanded": moreOpen,
+                        "aria-haspopup": "menu",
+                        "aria-label": "More platforms",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(EllipsisIcon, {}, void 0, false, {
+                            fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                            lineNumber: 160,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 150,
+                        columnNumber: 9
+                    }, this),
+                    moreOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(InlineMenu, {
+                        items: MORE_LINKS,
+                        onClose: ()=>setMoreOpen(false)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                        lineNumber: 163,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+                lineNumber: 149,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/ActionButtons/ActionButtons.tsx",
+        lineNumber: 108,
+        columnNumber: 5
+    }, this);
+}
+_s1(ActionButtons, "vZq4iRUjBwzQSpcYMi/q3F63YZ4=");
+_c5 = ActionButtons;
+var _c, _c1, _c2, _c3, _c4, _c5;
+__turbopack_context__.k.register(_c, "SpotifyIcon");
+__turbopack_context__.k.register(_c1, "HeartIcon");
+__turbopack_context__.k.register(_c2, "BullseyeIcon");
+__turbopack_context__.k.register(_c3, "EllipsisIcon");
+__turbopack_context__.k.register(_c4, "InlineMenu");
+__turbopack_context__.k.register(_c5, "ActionButtons");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/SignatureLogo/SignatureLogo.module.scss [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "intro": "SignatureLogo-module-scss-module__cIcHmG__intro",
+  "logo": "SignatureLogo-module-scss-module__cIcHmG__logo",
+});
+}),
+"[project]/src/components/SignatureLogo/signaturePaths.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// Generated from Island Moments (34b920cb1c5d0545-s.p.30pl85_cncuko.woff2); do not edit by hand.
+__turbopack_context__.s([
+    "SIGNATURE_PATHS",
+    ()=>SIGNATURE_PATHS,
+    "SIGNATURE_VIEW_BOX",
+    ()=>SIGNATURE_VIEW_BOX
+]);
+const SIGNATURE_VIEW_BOX = "-34 -525.2 4185 630.2";
+const SIGNATURE_PATHS = [
+    {
+        id: "glyph-1",
+        d: "M256 -55Q249 -55 245.5 -51.5Q242 -48 236 -52Q233 -51 228.5 -49.5Q224 -48 221 -46L203 -33Q196 -28 188.5 -23.5Q181 -19 176 -15L173 -11Q152 -12 129.5 -3.5Q107 5 84 25Q78 26 74 32.5Q70 39 66 43Q59 44 57.5 48Q56 52 54 58Q53 58 52.5 59Q52 60 52 60L47 64L47 65Q43 73 42 76Q41 79 34 85Q32 87 31 91.5Q30 96 28 98Q16 124 7 150Q-2 176 -2 204Q-2 213 3 217.5Q8 222 14 222Q27 222 31 209Q33 206 35 201.5Q37 197 38 193L39 184Q40 176 47.5 159Q55 142 65.5 125Q76 108 86 99L101 77Q106 65 115 54.5Q124 44 131 39L164 9L173 1Q199 1 223 25Q246 46 263 77Q280 108 293.5 142Q307 176 318 206L322 211Q325 217 326 226Q327 235 328 242Q333 248 337 256Q341 264 340 272L341 276Q344 277 341 279Q338 281 344 282Q350 292 351 303Q352 314 355 319Q358 323 360.5 327Q363 331 361 337Q362 341 367 355Q372 369 378.5 385.5Q385 402 389.5 414.5Q394 427 394 428Q395 432 394.5 436.5Q394 441 395 446L398 457Q376 456 353 452.5Q330 449 309 445Q298 443 298.5 444.5Q299 446 301.5 448.5Q304 451 299 451L296 451Q289 451 283.5 448.5Q278 446 278 444Q277 440 263.5 437Q250 434 248 434Q235 432 224 430Q213 428 204 427Q201 426 198.5 431Q196 436 196 442Q196 448 198.5 453.5Q201 459 203 461Q203 462 205 462L206 462L232 465Q240 467 253.5 467Q267 467 277 471L317 473Q329 474 345 474.5Q361 475 372 475Q377 475 376 474Q375 473 379 473Q385 473 387 474Q389 475 396 475L405 475L407 478Q412 486 418 490Q424 494 435 493Q446 493 451 484Q452 483 451.5 481.5Q451 480 452 479Q452 478 454 472Q456 472 458.5 471.5Q461 471 462 471Q464 470 463 469Q462 468 463 467Q466 466 467.5 467.5Q469 469 472 469Q478 469 480 467L492 464Q499 461 499 455.5Q499 450 492 452L484 455L474 456Q470 457 464 457.5Q458 458 452 458L447 443Q442 428 439.5 411Q437 394 419 385Q418 381 412.5 367.5Q407 354 402 341.5Q397 329 395 327Q392 323 389.5 319.5Q387 316 386 311Q385 301 379 284.5Q373 268 366 251Q359 234 354 224Q349 220 345.5 218Q342 216 348 209Q345 202 342 202.5Q339 203 334 204Q336 200 337.5 198.5Q339 197 340 192Q333 175 323.5 151Q314 127 303 113Q296 110 292.5 107Q289 104 293 95Q289 89 289 85L282 74Q278 71 274.5 67.5Q271 64 271 58L265 49Q260 47 256 44Q252 41 252 34Q222 0 186 -9L194 -15Q196 -15 202.5 -19Q209 -23 210 -25Q222 -34 229.5 -37Q237 -40 244 -40Q252 -40 267 -37L272 -37Q279 -37 279.5 -40Q280 -43 276 -47Q275 -48 272.5 -50.5Q270 -53 269 -53Q266 -53 263 -54Q260 -55 256 -55ZM149 6L146 8Q143 14 134.5 19Q126 24 119 31Q112 38 106.5 45.5Q101 53 96 58Q94 61 88.5 68.5Q83 76 77 83Q73 87 72.5 92Q72 97 70 98Q66 103 62 107.5Q58 112 54 119Q50 127 45 137Q40 147 32 156L14 178Q28 125 56 84Q84 43 115 23Q124 17 132.5 12.5Q141 8 149 6Z",
+        transform: "translate(0 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-2",
+        d: "M63 -9Q41 -9 24.5 3.5Q8 16 8 47Q8 58 12 78Q16 98 25 120Q30 132 36.5 143Q43 154 49 164Q50 165 55.5 162Q61 159 62 160Q63 162 59.5 164.5Q56 167 57 168Q59 170 60.5 170.5Q62 171 63 173Q64 175 64 177Q64 180 61.5 182Q59 184 63 188Q68 195 74.5 201.5Q81 208 86 213Q88 215 91 219.5Q94 224 95 225L97 227Q97 227 97.5 227.5Q98 228 99 229Q99 230 99.5 230Q100 230 100 231Q100 234 94 237Q88 240 88 241Q88 242 87 243Q86 244 85 246Q86 246 87.5 248.5Q89 251 90 251Q91 251 94 249.5Q97 248 98 248Q99 248 99.5 249Q100 250 101 250Q103 250 110 247.5Q117 245 118 245Q119 245 124 250Q129 255 130 256Q132 258 133 260.5Q134 263 138 267L139 267Q140 268 140 269Q140 270 140 270Q142 272 143.5 273.5Q145 275 146 276Q147 277 147.5 277Q148 277 148 277Q149 279 150.5 280Q152 281 153 282L155 286Q157 288 169 295Q181 302 187 302L192 302Q192 302 192 301.5Q192 301 193 301Q194 301 195 301.5Q196 302 197 302Q197 302 200 299Q201 298 202 298.5Q203 299 204 299Q205 298 205 297Q205 296 206 296Q208 296 207.5 296.5Q207 297 208 297Q209 297 209 295Q209 293 210 291Q209 288 208.5 284.5Q208 281 207 279Q198 267 193 267Q193 266 190 263Q187 263 183 261Q179 259 175 257L175 254Q175 250 172.5 250.5Q170 251 168 247L168 246Q170 243 175 243L182 242Q184 242 184.5 243Q185 244 186 244Q187 244 187 243.5Q187 243 188 243Q190 243 191 244Q192 245 193 245L202 244Q199 249 199 252Q199 257 208 258Q222 258 232 248Q234 249 237 248Q240 247 243 248L248 251L249 250Q253 252 254 252Q256 252 255.5 251.5Q255 251 256 251Q256 251 258 253Q259 253 260.5 252.5Q262 252 263 253L266 256L278 256L279 257Q281 258 284.5 259.5Q288 261 291 261Q291 262 293 262.5Q295 263 296 263L298 263Q303 263 303 260Q303 257 300 255Q299 254 297 254.5Q295 255 293 254Q289 250 287 250Q286 250 286 250.5Q286 251 285 251Q284 251 281 248L274 247L273 247Q271 247 271 245Q267 245 263 244.5Q259 244 255 243L254 242Q253 242 252 241.5Q251 241 249 241Q247 240 238 240Q244 232 246 225Q248 220 249.5 209.5Q251 199 250 194Q250 191 248 192.5Q246 194 246 192Q246 189 248.5 188.5Q251 188 251 183Q251 180 250 175.5Q249 171 248 166Q247 160 245.5 153.5Q244 147 240 141L237 136L237 130Q237 122 232.5 119Q228 116 226 112Q224 106 223.5 104Q223 102 219 96Q206 76 188 58Q170 40 153 25Q138 12 112.5 1.5Q87 -9 63 -9ZM73 9Q76 9 85 10.5Q94 12 104 19Q106 20 108 18Q110 16 112 17Q117 19 116 20Q115 21 119 22L120 22Q126 22 125.5 23.5Q125 25 126 28Q126 31 129 33Q132 35 134 36Q145 45 161 66.5Q177 88 193 110Q194 112 196 111Q198 110 199 111Q200 112 200 117Q200 120 203 126.5Q206 133 209 137Q210 140 213 148.5Q216 157 218.5 164.5Q221 172 219 172Q217 173 217 174Q217 176 223 178Q229 180 222 181Q220 182 223 185Q226 188 220 189Q215 190 216.5 192Q218 194 219 195Q222 198 222 201Q222 210 217.5 219Q213 228 208 235Q202 231 202 231Q201 231 201 231.5Q201 232 199 232Q198 232 198 232.5Q198 233 197 233Q196 233 195 232Q194 231 194 231Q193 230 190.5 230Q188 230 187 230Q186 230 185.5 231Q185 232 184 232Q183 232 181.5 230Q180 228 178 228Q177 228 177 229Q177 230 175 230Q174 230 173.5 229Q173 228 172 228Q171 228 168 231L167 231Q167 225 164 225Q163 225 161 227Q150 220 124 194.5Q98 169 78 136Q74 128 68.5 117Q63 106 59 92Q58 86 53.5 83Q49 80 47 76Q46 72 48 71Q50 70 51 68Q51 64 49.5 57Q48 50 48 44Q48 25 55.5 17Q63 9 73 9Z",
+        transform: "translate(379 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-3",
+        d: "M6 -3Q0 -3 0 4Q0 9 3 16Q11 33 22 64Q33 95 49 117L88 204Q88 204 86 205.5Q84 207 84 209Q78 213 71.5 220.5Q65 228 70 236Q72 238 73 238Q74 238 74 238L74 240Q74 244 77.5 245Q81 246 82 248Q84 262 105.5 269Q127 276 144 276Q161 276 161 271Q161 268 155 264Q153 262 145.5 255Q138 248 132 238L125 226L118 217Q102 188 92 168Q82 148 68 117Q65 111 65 107Q65 102 69 102Q71 102 73.5 103.5Q76 105 79 106Q87 111 92.5 115.5Q98 120 105 125Q108 128 110 125.5Q112 123 110 119Q106 111 104.5 109.5Q103 108 101 107Q99 106 92 98L88 90Q86 88 83.5 82.5Q81 77 81 76Q81 74 79 74.5Q77 75 73 71Q72 70 72.5 67Q73 64 71 62Q70 59 68 57.5Q66 56 66 55Q65 51 62.5 50.5Q60 50 58 48Q57 48 57 46Q57 38 55 39Q53 40 51 37Q49 33 46 33Q40 31 41 30Q42 29 44 28.5Q46 28 41 25Q38 24 36 19.5Q34 15 32 13Q30 11 27 10Q24 9 22 6Q13 -3 6 -3ZM304 5Q300 5 297 5.5Q294 6 291 7Q281 9 273.5 13Q266 17 261 28Q260 33 256.5 41Q253 49 252 56Q251 61 251 68Q250 73 250 81Q248 91 248 99Q249 107 249 118Q249 129 250 134Q252 143 252 143.5Q252 144 252 153Q253 165 253 178Q253 191 254 199Q257 229 242 229Q236 229 226 224Q225 221 222.5 220.5Q220 220 216 218L211 215Q211 214 209 214.5Q207 215 207 213Q208 209 206.5 208Q205 207 203 209L192 201Q192 200 189 197L188 196Q184 192 181 192L178 189Q178 188 176.5 185.5Q175 183 171 184L166 179Q162 173 159.5 172Q157 171 154 170L146 160L142 159Q142 155 133.5 147Q125 139 122 136Q119 133 116 133Q114 133 114 135Q114 136 119 143Q123 147 131.5 158Q140 169 141 168Q146 173 148 178.5Q150 184 155 188Q155 187 155.5 186.5Q156 186 156 186Q158 186 161 191.5Q164 197 165 196L182 211Q182 212 187 215Q191 217 192 217Q193 217 197 223L204 228Q205 230 206.5 227.5Q208 225 209 226L212 233Q214 236 218.5 238.5Q223 241 228 244Q240 256 246 256L250 256Q263 261 274 261Q290 261 299 249Q301 246 303 238Q305 237 304.5 235.5Q304 234 305 232Q306 230 309 227.5Q312 225 312 222L312 220Q312 216 307 213Q312 209 311.5 208.5Q311 208 310 205L308 191Q307 184 305 180.5Q303 177 301 169Q305 163 301 161L299 161L298 157Q298 155 300 153L297 147Q298 148 298.5 147.5Q299 147 299 147Q298 145 296 139.5Q294 134 293 131Q292 126 289 126Q286 126 287 121Q288 120 288.5 114.5Q289 109 287 109L285 97L285 94Q285 89 283.5 84Q282 79 281 74Q280 69 279.5 63.5Q279 58 279 53Q279 49 279.5 44.5Q280 40 281 36Q281 35 284 30Q287 25 287 24L290 21Q292 20 296.5 21Q301 22 303 20Q312 19 326.5 29.5Q341 40 353 53Q356 56 359 56Q361 56 362 53Q363 50 360 45Q344 22 330 13.5Q316 5 304 5Z",
+        transform: "translate(656 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-4",
+        d: "M185 -3Q179 -3 179 4Q179 9 182 16Q190 33 200.5 64Q211 95 227 117Q238 139 247.5 160.5Q257 182 266 204Q266 204 264 205.5Q262 207 262 209Q257 213 250 220.5Q243 228 249 236Q251 238 251.5 238Q252 238 252 238Q252 239 251.5 239Q251 239 251 240L250 241Q249 241 248.5 241.5Q248 242 247 242Q243 242 238 240.5Q233 239 228 239Q222 239 212 234.5Q202 230 194 227Q190 226 189.5 226.5Q189 227 185 225Q184 224 185.5 228.5Q187 233 187 235Q187 236 186 236Q184 236 178 230.5Q172 225 170 224Q169 223 169.5 221Q170 219 170 217Q170 214 165 210.5Q160 207 158 205Q154 202 148.5 201.5Q143 201 138 197Q132 193 132.5 191Q133 189 126 184Q117 177 101.5 163Q86 149 78 138Q59 115 43.5 85Q28 55 28 38Q28 25 39 25Q41 25 43 25.5Q45 26 48 27L74 42L80 43L80 44L84 41Q85 42 83.5 44.5Q82 47 83 47Q84 47 84.5 46.5Q85 46 86 46L88 49Q88 49 91.5 48.5Q95 48 97 50Q100 51 98.5 53Q97 55 95 56L102 62Q103 64 110 66Q127 77 138.5 92.5Q150 108 165 121L166 121L178 133L177 136L190 151L192 151Q193 153 196.5 156Q200 159 201 161Q203 162 210.5 171.5Q218 181 225 187Q233 193 234 193Q235 193 235 192.5Q235 192 235 192Q235 189 232.5 183Q230 177 228 175Q221 164 210 150.5Q199 137 197 134Q185 121 168 99.5Q151 78 131 57Q111 36 91.5 21.5Q72 7 55 7Q39 7 21 17Q3 27 3 55Q3 64 5.5 75.5Q8 87 14 100Q14 100 16 102.5Q18 105 19 104Q21 107 20.5 110.5Q20 114 20 115L22 117Q24 128 37 137Q50 146 51 151Q52 152 52 154L56 167L56 171L60 171L63 175L64 177Q62 178 65.5 180.5Q69 183 69 183Q70 185 71.5 186Q73 187 74 188L81 188Q83 191 79 191Q75 191 75 191Q75 192 75.5 192.5Q76 193 76 194L87 203Q92 207 97 210Q102 213 106 217Q109 217 107 214Q108 212 109.5 214Q111 216 111 216L116 217L116 218Q116 220 117 224Q118 228 118 229Q139 245 162 257.5Q185 270 207 270Q233 270 254 250L259 247Q260 247 260 248Q262 262 283.5 269Q305 276 322 276Q340 276 340 271Q340 269 334 264Q331 262 324 255Q317 248 310 238Q309 235 307 232Q305 229 303 226Q302 224 300.5 221.5Q299 219 297 217Q280 188 270 168Q260 148 246 117Q244 111 244 110Q244 102 253 102Q259 102 265 105L275 109Q299 131 325 146Q326 146 326.5 146.5Q327 147 328 147Q331 147 332 143.5Q333 140 330 138Q301 122 276 97Q275 95 274 93Q273 91 271 89Q268 87 265 82Q262 77 262 76Q261 73 259.5 74Q258 75 253 71Q252 70 251.5 67Q251 64 250 62Q248 59 246 57.5Q244 56 244 55Q243 51 240.5 50.5Q238 50 236 48Q235 48 235 47.5Q235 47 235 47Q235 38 233 39Q231 40 229 37Q227 33 224 33Q218 31 219.5 30Q221 29 222.5 28.5Q224 28 219 25Q217 24 215 19.5Q213 15 211 13Q208 11 205 10Q202 9 200 6Q191 -3 185 -3Z",
+        transform: "translate(1029 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-5",
+        d: "M250 -73Q206 -73 165 -35Q159 -33 155 -26.5Q151 -20 147 -16Q140 -14 138 -10Q136 -6 134 0Q134 1 132 3Q131 4 130 5Q129 6 128 7Q127 7 127.5 7.5Q128 8 128 8Q124 16 123 19.5Q122 23 115 29Q113 31 111.5 35.5Q110 40 109 43Q98 69 89.5 96.5Q81 124 81 153Q81 163 87 168Q93 173 100 173Q113 173 117 160Q119 156 121.5 151.5Q124 147 124 143L124 133Q124 127 127.5 130.5Q131 134 132 129Q134 122 135 120.5Q136 119 143 115Q145 111 148 107Q151 103 154 99L154 97Q154 91 158 88.5Q162 86 167 83L180 69Q179 67 179 65Q179 59 185.5 57Q192 55 197 53Q198 52 208.5 43.5Q219 35 223 33Q228 30 234 26.5Q240 23 246 21Q248 21 250 19Q268 12 283 12Q297 12 315 18Q318 19 320.5 19.5Q323 20 324 20Q327 20 327 18Q327 13 318 8Q318 6 315 6Q311 5 307 3Q303 1 299 2Q294 2 291 3Q288 4 283 0Q270 1 254 6Q238 11 227 17Q226 24 218 24.5Q210 25 205 29Q201 34 198.5 40Q196 46 188 41Q184 45 181 47.5Q178 50 172 50Q170 52 166.5 54Q163 56 164 60Q160 63 148.5 70.5Q137 78 135 80Q130 86 126 90Q122 94 115 97L112 99Q125 60 143.5 23Q162 -14 198 -37Q215 -47 229.5 -53.5Q244 -60 258 -60Q284 -60 313 -34Q338 -11 358 21.5Q378 54 394 90Q410 126 422 157Q424 159 425 160Q426 161 427 162Q429 168 430.5 176Q432 184 434 191L401 185Q388 183 388 184.5Q388 186 391 188.5Q394 191 388 190L384 190Q376 190 369 187Q362 184 362 182Q362 180 353.5 177Q345 174 336 172Q327 170 326 170Q310 167 296 164.5Q282 162 271 160L270 160Q266 160 263 166Q260 172 260 179Q262 191 267 196Q269 198 271 198L303 203Q314 205 330.5 206Q347 207 359 211L409 215L448 219Q449 221 449 226L451 231Q453 232 450 234Q447 236 454 237Q461 248 462.5 259.5Q464 271 468 276Q471 281 474 285Q477 289 475 295Q476 299 481.5 314.5Q487 330 494 349Q501 368 506 382.5Q511 397 511 399L521 428Q493 427 464 425Q435 423 407 416Q408 417 406 418.5Q404 420 403 420L402 421Q398 422 400.5 419.5Q403 417 399 415Q390 414 378.5 410.5Q367 407 358 407Q354 406 349 406.5Q344 407 339 407Q324 406 309.5 399Q295 392 280 387L262 382Q251 377 238 375Q225 373 214 368L215 367Q211 364 205 363Q199 362 194 360Q182 356 169.5 350.5Q157 345 144 341Q137 339 130.5 337.5Q124 336 116 333Q112 332 109 331.5Q106 331 102 331Q93 331 86 335Q82 337 74.5 346.5Q67 356 62 366.5Q57 377 58 382Q59 385 71 389.5Q83 394 99 398.5Q115 403 128.5 406.5Q142 410 146 411Q148 412 157 413.5Q166 415 167 411Q168 409 165 405.5Q162 402 160 400Q160 399 157.5 396Q155 393 157 394L192 403Q200 405 211.5 404.5Q223 404 229 408Q231 410 231.5 412Q232 414 235 414Q242 416 258.5 418Q275 420 279 424Q287 426 296 426.5Q305 427 312 431Q315 432 331.5 435Q348 438 369.5 441.5Q391 445 408 447.5Q425 450 428 450L429 450Q433 450 437 451Q441 452 445 452Q453 452 453 445Q454 444 458 444Q467 444 472 449Q476 450 478.5 452Q481 454 485 455Q496 457 508.5 456.5Q521 456 531 456Q538 471 546 476.5Q554 482 570 482Q581 482 584 471.5Q587 461 587 453Q592 453 600 453.5Q608 454 617 454Q626 454 634.5 453Q643 452 648 450Q649 453 653.5 452.5Q658 452 660 451Q668 447 677.5 447.5Q687 448 696 444Q705 441 713 437Q721 433 730 430Q738 428 743.5 422.5Q749 417 756 412Q759 410 762 407.5Q765 405 765 401Q765 401 768 397Q771 393 764 395Q763 395 761.5 395.5Q760 396 759 395Q759 393 761 391Q763 390 765.5 391Q768 392 769 393Q773 393 773.5 389Q774 385 775 381Q778 369 778 357Q778 344 771.5 328Q765 312 754 300.5Q743 289 728 289Q723 289 720 290Q709 293 709 296Q709 299 719 306Q726 311 731 317.5Q736 324 740 331Q747 336 751 351Q755 366 755 379Q755 389 752 395Q751 395 743.5 406Q736 417 726 418Q721 420 715.5 422Q710 424 705 425Q701 429 689.5 431Q678 433 666 434Q654 435 648 435Q643 435 630 434.5Q617 434 604 433.5Q591 433 586 433Q577 407 555 402Q554 399 547 381Q540 363 532 341.5Q524 320 517.5 303.5Q511 287 510 285Q507 281 504 277Q501 273 500 268Q497 250 482 219Q483 219 483 218.5Q483 218 487 218Q495 218 497.5 219.5Q500 221 508 222Q519 223 535.5 223Q552 223 562 222Q567 222 576.5 222Q586 222 590 220Q592 219 591 218Q590 217 593 217L595 217Q597 217 599 217.5Q601 218 604 219L613 218Q623 216 629 214Q638 213 638 205Q638 199 629 202Q627 202 624.5 203Q622 204 619 205L615 205Q604 205 582 206Q560 207 543 206Q540 206 540.5 208.5Q541 211 539 211Q538 212 534.5 209.5Q531 207 530 206Q527 206 525.5 205Q524 204 521 204L472 198L462 176Q456 172 452 169.5Q448 167 454 160Q451 153 448 153.5Q445 154 440 155Q441 150 443 148.5Q445 147 446 142Q438 124 426 98.5Q414 73 402 58Q395 55 391 52Q387 49 391 40Q389 38 388 35Q387 32 386 29L378 17Q374 14 370 10.5Q366 7 366 0Q362 -6 359 -9Q353 -11 349 -14Q345 -17 345 -25Q325 -47 300.5 -60Q276 -73 250 -73Z",
+        transform: "translate(1568 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-6",
+        d: "M62 -2Q37 -2 18 12Q-1 26 -1 60Q-1 73 2 86.5Q5 100 9 113Q11 126 15 136Q16 140 16.5 140.5Q17 141 21 143L29 155L29 159Q28 159 28 159.5Q28 160 28 160Q28 163 33 167Q38 171 38 171Q39 176 41 176Q43 176 46 179L57 179L57 181Q57 186 52.5 185.5Q48 185 48 186Q48 187 51.5 190.5Q55 194 56 195Q59 199 61 202.5Q63 206 67 208Q85 230 89.5 236Q94 242 99 245Q101 245 102.5 243.5Q104 242 102 240Q104 237 105.5 239Q107 241 107 241L111 243Q109 245 109 248Q109 253 111 256Q113 260 118.5 264Q124 268 124 269Q130 271 133.5 273Q137 275 141 275Q148 275 155 270Q174 260 187 250Q200 240 200 222Q200 203 184.5 189.5Q169 176 147 167Q125 158 103.5 152.5Q82 147 70 144Q63 143 63.5 138.5Q64 134 62 129L55 118L49 104L44 95Q37 89 39 86Q41 83 46 87Q47 86 47 84Q47 80 45 74.5Q43 69 42 66Q41 62 42.5 62.5Q44 63 44 58L45 44Q51 25 72 22Q74 22 76.5 21.5Q79 21 81 21Q99 21 100.5 24Q102 27 105 28Q114 30 120.5 32Q127 34 134 38Q146 43 157 51Q168 59 180 67L190 74Q191 76 190 77Q189 78 190 79Q192 80 193.5 79.5Q195 79 196 80Q198 81 200 83.5Q202 86 204 88Q206 90 206.5 92Q207 94 209 96Q217 104 225.5 113Q234 122 240 129Q247 139 251 139Q253 139 253 137Q253 132 246 122Q229 97 207 73.5Q185 50 159 31Q140 18 114 8Q88 -2 62 -2ZM77 159Q92 160 116 167.5Q140 175 156 188Q173 202 173 219Q173 235 156 250Q142 240 125.5 221.5Q109 203 96 185.5Q83 168 77 159Z",
+        transform: "translate(2280 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-7",
+        d: "M43 2Q33 2 22 6.5Q11 11 14 17Q18 25 23.5 33.5Q29 42 34 52L45 73Q47 78 49.5 80.5Q52 83 54 87Q55 88 55 92Q55 97 59.5 103.5Q64 110 66 116Q67 117 68 110Q69 103 73 111Q74 112 72.5 114Q71 116 71 118Q71 120 72.5 120.5Q74 121 74 122Q75 125 72.5 124.5Q70 124 70 125Q72 128 74.5 129Q77 130 78 132Q78 134 76.5 134.5Q75 135 76 136Q81 150 87 169Q93 188 96 204Q96 204 94 205.5Q92 207 92 209L85 214Q73 203 59 195Q58 194 55 194Q51 194 50 198Q49 202 53 205Q58 208 61 209.5Q64 211 68 215Q70 217 70.5 219Q71 221 72 223L76 228Q76 233 78 236Q80 238 81 238Q82 238 82 238L82 240Q82 244 85.5 245Q89 246 89 248Q91 262 113 269Q135 276 152 276Q169 276 169 271Q169 268 163 264Q160 262 153 255Q146 248 140 238L133 226L126 217Q119 201 106 168Q93 135 79 85Q82 89 93 102Q104 115 119 132Q134 149 148 164.5Q162 180 171 189L176 192Q178 194 180.5 197.5Q183 201 185 203Q186 204 186.5 199.5Q187 195 188 196Q192 199 192.5 205Q193 211 197 213Q208 222 227.5 238.5Q247 255 268 258Q270 260 274.5 259.5Q279 259 281 260Q283 260 284 261Q285 262 289 262Q291 262 297.5 259Q304 256 305 251Q311 247 311 239Q311 225 296 218Q291 213 285 208.5Q279 204 273 199Q271 197 270 197Q263 191 258 184Q253 177 253 166Q253 165 255 163.5Q257 162 256 161Q259 158 265 157.5Q271 157 277 157Q287 157 307 165L309 165Q310 165 310 164Q310 162 306 157.5Q302 153 297 151Q286 147 274 146.5Q262 146 257 146Q239 146 234.5 153Q230 160 226 170L226 175L231 180Q230 183 228 186Q226 189 226 193Q226 203 234 216Q223 213 206.5 199.5Q190 186 173 168.5Q156 151 142 134.5Q128 118 120 108Q117 104 113.5 103.5Q110 103 108 100Q107 99 110.5 99Q114 99 113 98Q100 78 85.5 54Q71 30 57 7Q54 2 43 2Z",
+        transform: "translate(2502 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-8",
+        d: "M43 2Q33 2 22 6.5Q11 11 14 17Q18 25 23.5 33.5Q29 42 34 52L45 73Q47 78 49.5 80.5Q52 83 54 87Q55 88 55 92Q55 97 59.5 103.5Q64 110 66 116Q67 117 68 110Q69 103 73 111Q74 112 72.5 114Q71 116 71 118Q71 120 72.5 120.5Q74 121 74 122Q75 125 72.5 124.5Q70 124 70 125Q72 128 74.5 129Q77 130 78 132Q78 134 76.5 134.5Q75 135 76 136Q81 150 87 169Q93 188 96 204Q96 204 94 205.5Q92 207 92 209L85 214Q73 203 59 195Q58 194 55 194Q51 194 50 198Q49 202 53 205Q58 208 61 209.5Q64 211 68 215Q70 217 70.5 219Q71 221 72 223L76 228Q76 233 78 236Q80 238 81 238Q82 238 82 238L82 240Q82 244 85.5 245Q89 246 89 248Q91 262 113 269Q135 276 152 276Q169 276 169 271Q169 268 163 264Q160 262 153 255Q146 248 140 238L133 226L126 217Q119 201 106 168Q93 135 79 85Q82 89 93 102Q104 115 119 132Q134 149 148 164.5Q162 180 171 189L176 192Q178 194 180.5 197.5Q183 201 185 203Q186 204 186.5 199.5Q187 195 188 196Q192 199 192.5 205Q193 211 197 213Q208 222 227.5 238.5Q247 255 268 258Q270 260 274.5 259.5Q279 259 281 260Q283 260 284 261Q285 262 289 262Q291 262 297.5 259Q304 256 305 251Q311 247 311 239Q311 225 296 218Q291 213 285 208.5Q279 204 273 199Q271 197 270 197Q263 191 258 184Q253 177 253 166Q253 165 255 163.5Q257 162 256 161Q259 158 265 157.5Q271 157 277 157Q287 157 307 165L309 165Q310 165 310 164Q310 162 306 157.5Q302 153 297 151Q286 147 274 146.5Q262 146 257 146Q239 146 234.5 153Q230 160 226 170L226 175L231 180Q230 183 228 186Q226 189 226 193Q226 203 234 216Q223 213 206.5 199.5Q190 186 173 168.5Q156 151 142 134.5Q128 118 120 108Q117 104 113.5 103.5Q110 103 108 100Q107 99 110.5 99Q114 99 113 98Q100 78 85.5 54Q71 30 57 7Q54 2 43 2Z",
+        transform: "translate(2798 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-9",
+        d: "M62 -2Q37 -2 18 12Q-1 26 -1 60Q-1 73 2 86.5Q5 100 9 113Q11 126 15 136Q16 140 16.5 140.5Q17 141 21 143L29 155L29 159Q28 159 28 159.5Q28 160 28 160Q28 163 33 167Q38 171 38 171Q39 176 41 176Q43 176 46 179L57 179L57 181Q57 186 52.5 185.5Q48 185 48 186Q48 187 51.5 190.5Q55 194 56 195Q59 199 61 202.5Q63 206 67 208Q85 230 89.5 236Q94 242 99 245Q101 245 102.5 243.5Q104 242 102 240Q104 237 105.5 239Q107 241 107 241L111 243Q109 245 109 248Q109 253 111 256Q113 260 118.5 264Q124 268 124 269Q130 271 133.5 273Q137 275 141 275Q148 275 155 270Q174 260 187 250Q200 240 200 222Q200 203 184.5 189.5Q169 176 147 167Q125 158 103.5 152.5Q82 147 70 144Q63 143 63.5 138.5Q64 134 62 129L55 118L49 104L44 95Q37 89 39 86Q41 83 46 87Q47 86 47 84Q47 80 45 74.5Q43 69 42 66Q41 62 42.5 62.5Q44 63 44 58L45 44Q51 25 72 22Q74 22 76.5 21.5Q79 21 81 21Q99 21 100.5 24Q102 27 105 28Q114 30 120.5 32Q127 34 134 38Q146 43 157 51Q168 59 180 67L190 74Q191 76 190 77Q189 78 190 79Q192 80 193.5 79.5Q195 79 196 80Q198 81 200 83.5Q202 86 204 88Q206 90 206.5 92Q207 94 209 96Q217 104 225.5 113Q234 122 240 129Q247 139 251 139Q253 139 253 137Q253 132 246 122Q229 97 207 73.5Q185 50 159 31Q140 18 114 8Q88 -2 62 -2ZM77 159Q92 160 116 167.5Q140 175 156 188Q173 202 173 219Q173 235 156 250Q142 240 125.5 221.5Q109 203 96 185.5Q83 168 77 159Z",
+        transform: "translate(3094 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-10",
+        d: "M160 312Q157 312 154.5 314Q152 316 148 319Q146 320 143.5 321.5Q141 323 141 327Q140 328 137 328Q132 328 132 335Q132 343 140 346L145 350L145 349L149 354L151 354Q157 354 159.5 360Q162 366 171 368Q177 370 181 367Q185 364 191 364Q197 364 204 368L219 371Q222 371 222 369Q222 367 216.5 364Q211 361 209 359L208 358L207 356L203 351Q197 344 189.5 334.5Q182 325 174 319Q165 312 160 312ZM8 -3Q2 -3 2 4Q2 9 5 16Q13 33 23.5 64Q34 95 50 117Q61 139 70.5 160.5Q80 182 89 204Q89 204 87.5 205.5Q86 207 86 209Q80 213 73.5 220.5Q67 228 72 236Q74 238 75 238Q76 238 76 238Q76 239 75.5 239.5Q75 240 75 240Q75 244 79 245Q83 246 83 248Q85 262 107 269Q129 276 146 276Q163 276 163 271Q163 269 157 264Q154 262 147 255Q140 248 134 238L126 226Q125 224 123.5 221.5Q122 219 120 217Q104 188 94 168Q84 148 70 117Q68 111 68 109Q68 102 76 102Q82 102 88 105L98 109Q122 131 148 146Q149 146 149.5 146.5Q150 147 151 147Q154 147 155 143.5Q156 140 153 138Q124 122 99 97Q98 95 97 93Q96 91 94 89Q92 87 88.5 82Q85 77 85 76Q84 73 82.5 74Q81 75 76 71Q75 70 74.5 67Q74 64 73 62Q72 59 69.5 57.5Q67 56 67 55Q66 51 63.5 50.5Q61 50 59 48Q58 47 59 45Q60 43 58 41Q57 38 56 38.5Q55 39 53 37Q49 33 47 33Q41 31 42.5 30Q44 29 45.5 28.5Q47 28 42 25Q40 24 38 19.5Q36 15 34 13Q31 11 28.5 10Q26 9 23 6Q14 -3 8 -3Z",
+        transform: "translate(3316 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-11",
+        d: "M43 2Q33 2 22 6.5Q11 11 14 17Q18 25 23.5 33.5Q29 42 34 52L45 73Q47 78 49.5 80.5Q52 83 54 87Q55 88 55 92Q55 97 59.5 103.5Q64 110 66 116Q67 117 68 110Q69 103 73 111Q74 112 72.5 114Q71 116 71 118Q71 120 72.5 120.5Q74 121 74 122Q75 125 72.5 124.5Q70 124 70 125Q72 128 74.5 129Q77 130 78 132Q78 134 76.5 134.5Q75 135 76 136Q81 150 87 169Q93 188 96 204Q96 204 94 205.5Q92 207 92 209L85 214Q73 203 59 195Q58 194 55 194Q51 194 50 198Q49 202 53 205Q58 208 61 209.5Q64 211 68 215Q70 217 70.5 219Q71 221 72 223L76 228Q76 233 78 236Q80 238 81 238Q82 238 82 238L82 240Q82 244 85.5 245Q89 246 89 248Q91 262 113 269Q135 276 152 276Q169 276 169 271Q169 268 163 264Q160 262 153 255Q146 248 140 238L133 226L126 217Q119 201 106 168Q93 135 79 85Q82 89 93 102Q104 115 119 132Q134 149 148 164.5Q162 180 171 189L176 192Q178 194 180.5 197.5Q183 201 185 203Q186 204 186.5 199.5Q187 195 188 196Q192 199 192.5 205Q193 211 197 213Q208 222 227.5 238.5Q247 255 268 258Q270 260 274.5 259.5Q279 259 281 260Q283 260 284 261Q285 262 289 262Q291 262 297.5 259Q304 256 305 251Q311 247 311 239Q311 225 296 218Q291 213 285 208.5Q279 204 273 199Q271 197 270 197Q263 191 258 184Q253 177 253 166Q253 165 255 163.5Q257 162 256 161Q259 158 265 157.5Q271 157 277 157Q287 157 307 165L309 165Q310 165 310 164Q310 162 306 157.5Q302 153 297 151Q286 147 274 146.5Q262 146 257 146Q239 146 234.5 153Q230 160 226 170L226 175L231 180Q230 183 228 186Q226 189 226 193Q226 203 234 216Q223 213 206.5 199.5Q190 186 173 168.5Q156 151 142 134.5Q128 118 120 108Q117 104 113.5 103.5Q110 103 108 100Q107 99 110.5 99Q114 99 113 98Q100 78 85.5 54Q71 30 57 7Q54 2 43 2Z",
+        transform: "translate(3483 0) scale(1 -1)"
+    },
+    {
+        id: "glyph-12",
+        d: "M185 -3Q179 -3 179 4Q179 9 182 16Q190 33 200.5 64Q211 95 227 117Q238 139 247.5 160.5Q257 182 266 204Q266 204 264 205.5Q262 207 262 209Q257 213 250 220.5Q243 228 249 236Q251 238 251.5 238Q252 238 252 238Q252 239 251.5 239Q251 239 251 240L250 241Q249 241 248.5 241.5Q248 242 247 242Q243 242 238 240.5Q233 239 228 239Q222 239 212 234.5Q202 230 194 227Q190 226 189.5 226.5Q189 227 185 225Q184 224 185.5 228.5Q187 233 187 235Q187 236 186 236Q184 236 178 230.5Q172 225 170 224Q169 223 169.5 221Q170 219 170 217Q170 214 165 210.5Q160 207 158 205Q154 202 148.5 201.5Q143 201 138 197Q132 193 132.5 191Q133 189 126 184Q117 177 101.5 163Q86 149 78 138Q59 115 43.5 85Q28 55 28 38Q28 25 39 25Q41 25 43 25.5Q45 26 48 27L74 42L80 43L80 44L84 41Q85 42 83.5 44.5Q82 47 83 47Q84 47 84.5 46.5Q85 46 86 46L88 49Q88 49 91.5 48.5Q95 48 97 50Q100 51 98.5 53Q97 55 95 56L102 62Q103 64 110 66Q127 77 138.5 92.5Q150 108 165 121L166 121L178 133L177 136L190 151L192 151Q193 153 196.5 156Q200 159 201 161Q203 162 210.5 171.5Q218 181 225 187Q233 193 234 193Q235 193 235 192.5Q235 192 235 192Q235 189 232.5 183Q230 177 228 175Q221 164 210 150.5Q199 137 197 134Q185 121 168 99.5Q151 78 131 57Q111 36 91.5 21.5Q72 7 55 7Q39 7 21 17Q3 27 3 55Q3 64 5.5 75.5Q8 87 14 100Q14 100 16 102.5Q18 105 19 104Q21 107 20.5 110.5Q20 114 20 115L22 117Q24 128 37 137Q50 146 51 151Q52 152 52 154L56 167L56 171L60 171L63 175L64 177Q62 178 65.5 180.5Q69 183 69 183Q70 185 71.5 186Q73 187 74 188L81 188Q83 191 79 191Q75 191 75 191Q75 192 75.5 192.5Q76 193 76 194L87 203Q92 207 97 210Q102 213 106 217Q109 217 107 214Q108 212 109.5 214Q111 216 111 216L116 217L116 218Q116 220 117 224Q118 228 118 229Q139 245 162 257.5Q185 270 207 270Q233 270 254 250L259 247Q260 247 260 248Q262 262 283.5 269Q305 276 322 276Q340 276 340 271Q340 269 334 264Q331 262 324 255Q317 248 310 238Q309 235 307 232Q305 229 303 226Q302 224 300.5 221.5Q299 219 297 217Q280 188 270 168Q260 148 246 117Q244 111 244 110Q244 102 253 102Q259 102 265 105L275 109Q299 131 325 146Q326 146 326.5 146.5Q327 147 328 147Q331 147 332 143.5Q333 140 330 138Q301 122 276 97Q275 95 274 93Q273 91 271 89Q268 87 265 82Q262 77 262 76Q261 73 259.5 74Q258 75 253 71Q252 70 251.5 67Q251 64 250 62Q248 59 246 57.5Q244 56 244 55Q243 51 240.5 50.5Q238 50 236 48Q235 48 235 47.5Q235 47 235 47Q235 38 233 39Q231 40 229 37Q227 33 224 33Q218 31 219.5 30Q221 29 222.5 28.5Q224 28 219 25Q217 24 215 19.5Q213 15 211 13Q208 11 205 10Q202 9 200 6Q191 -3 185 -3Z",
+        transform: "translate(3779 0) scale(1 -1)"
+    }
+];
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/SignatureLogo/signatureStrokePaths.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// Hand-traced centerlines for the Island Moments signature outlines.
+// Keep these paths open and in pen-travel order: GSAP draws them before the
+// exact generated outlines in signaturePaths.ts fade in.
+__turbopack_context__.s([
+    "SIGNATURE_STROKE_PATHS",
+    ()=>SIGNATURE_STROKE_PATHS
+]);
+const SIGNATURE_STROKE_PATHS = [
+    {
+        id: 'stroke-j-main',
+        d: 'M430 -454 C410 -350 370 -210 315 -92 C273 -2 218 54 151 58 C90 62 49 31 47 -19 C45 -84 89 -160 161 -217'
+    },
+    {
+        id: 'stroke-j-top',
+        d: 'M156 -430 C248 -452 360 -467 485 -458'
+    },
+    {
+        id: 'stroke-o',
+        d: 'M587 -239 C528 -211 486 -137 480 -65 C476 -13 503 14 549 7 C619 -4 673 -92 675 -175 C676 -230 651 -257 611 -250 C568 -243 536 -202 532 -151 C527 -104 551 -76 590 -78 C627 -80 661 -108 686 -142'
+    },
+    {
+        id: 'stroke-n',
+        d: 'M674 -19 C707 -96 748 -181 797 -253 C775 -171 751 -92 730 -19 C771 -91 829 -190 893 -232 C931 -257 958 -238 953 -198 C946 -142 917 -73 929 -25 C938 7 970 7 1010 -43'
+    },
+    {
+        id: 'stroke-a',
+        d: 'M1256 -225 C1190 -258 1114 -204 1070 -129 C1035 -68 1033 -13 1068 7 C1111 31 1195 -44 1254 -132 C1274 -162 1291 -194 1305 -225 C1278 -151 1249 -76 1247 -30 C1245 5 1265 14 1295 1 C1317 -8 1339 -28 1360 -54'
+    },
+    {
+        id: 'stroke-f-main',
+        d: 'M2120 -449 C2075 -342 2029 -232 1984 -124 C1936 -11 1881 63 1813 64 C1748 65 1690 15 1680 -58 C1669 -142 1714 -222 1794 -258'
+    },
+    {
+        id: 'stroke-f-top',
+        d: 'M1632 -365 C1813 -420 2035 -457 2268 -454 C2307 -453 2333 -435 2331 -407 C2329 -385 2314 -368 2292 -365'
+    },
+    {
+        id: 'stroke-f-cross',
+        d: 'M1764 -184 C1930 -211 2101 -219 2250 -205'
+    },
+    {
+        id: 'stroke-e-1',
+        d: 'M2324 -145 C2384 -151 2462 -184 2471 -225 C2477 -253 2455 -268 2424 -250 C2374 -222 2323 -144 2319 -75 C2316 -22 2348 7 2397 4 C2451 1 2499 -29 2532 -72'
+    },
+    {
+        id: 'stroke-r-1',
+        d: 'M2528 -16 C2562 -94 2598 -178 2638 -251 C2616 -170 2594 -92 2579 -22 C2636 -123 2706 -217 2773 -247 C2801 -260 2815 -246 2808 -226 C2799 -201 2774 -185 2751 -169'
+    },
+    {
+        id: 'stroke-r-2',
+        d: 'M2824 -16 C2858 -94 2894 -178 2934 -251 C2912 -170 2890 -92 2875 -22 C2932 -123 3002 -217 3069 -247 C3097 -260 3111 -246 3104 -226 C3095 -201 3070 -185 3047 -169'
+    },
+    {
+        id: 'stroke-e-2',
+        d: 'M3138 -145 C3198 -151 3276 -184 3285 -225 C3291 -253 3269 -268 3238 -250 C3188 -222 3137 -144 3133 -75 C3130 -22 3162 7 3211 4 C3265 1 3313 -29 3346 -72'
+    },
+    {
+        id: 'stroke-i',
+        d: 'M3343 -18 C3375 -91 3406 -168 3436 -247 C3416 -173 3393 -98 3386 -48 C3380 -6 3401 9 3431 -4 C3453 -14 3473 -34 3490 -58'
+    },
+    {
+        id: 'stroke-i-dot',
+        d: 'M3472 -337 C3478 -343 3485 -349 3493 -355'
+    },
+    {
+        id: 'stroke-r-3',
+        d: 'M3509 -16 C3543 -94 3579 -178 3619 -251 C3597 -170 3575 -92 3560 -22 C3617 -123 3687 -217 3754 -247 C3782 -260 3796 -246 3789 -226 C3780 -201 3755 -185 3732 -169'
+    },
+    {
+        id: 'stroke-a-2',
+        d: 'M4006 -225 C3940 -258 3864 -204 3820 -129 C3785 -68 3783 -13 3818 7 C3861 31 3945 -44 4004 -132 C4024 -162 4041 -194 4055 -225 C4028 -151 3999 -76 3997 -30 C3995 5 4015 14 4045 1 C4067 -8 4089 -28 4110 -54'
+    }
+];
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/SignatureLogo/SignatureLogo.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$SignatureLogo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/SignatureLogo/SignatureLogo.module.scss [app-client] (css module)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$signaturePaths$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/SignatureLogo/signaturePaths.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$signatureStrokePaths$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/SignatureLogo/signatureStrokePaths.ts [app-client] (ecmascript)");
+;
+;
+;
+;
+;
+const SignatureLogo = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(_c = function SignatureLogo({ variant, className }, ref) {
+    const classNames = [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$SignatureLogo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].logo,
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$SignatureLogo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"][variant],
+        className
+    ].filter(Boolean).join(' ');
+    const isHeader = variant === 'header';
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        ref: ref,
+        className: classNames,
+        viewBox: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$signaturePaths$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SIGNATURE_VIEW_BOX"],
+        role: isHeader ? 'img' : undefined,
+        "aria-label": isHeader ? 'Jona Ferreira' : undefined,
+        "aria-hidden": isHeader ? undefined : true,
+        focusable: "false",
+        xmlns: "http://www.w3.org/2000/svg",
+        children: [
+            !isHeader ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                className: "signature-draw-layer",
+                children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$signatureStrokePaths$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SIGNATURE_STROKE_PATHS"].map(({ id, d })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        className: "signature-draw-path",
+                        "data-signature-path": id,
+                        d: d
+                    }, `draw-${id}`, false, {
+                        fileName: "[project]/src/components/SignatureLogo/SignatureLogo.tsx",
+                        lineNumber: 33,
+                        columnNumber: 15
+                    }, this))
+            }, void 0, false, {
+                fileName: "[project]/src/components/SignatureLogo/SignatureLogo.tsx",
+                lineNumber: 31,
+                columnNumber: 11
+            }, this) : null,
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                className: "signature-fill-layer",
+                children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$signaturePaths$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SIGNATURE_PATHS"].map(({ id, d, transform })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                        className: "signature-fill-path",
+                        "data-signature-path": id,
+                        d: d,
+                        transform: transform
+                    }, `fill-${id}`, false, {
+                        fileName: "[project]/src/components/SignatureLogo/SignatureLogo.tsx",
+                        lineNumber: 45,
+                        columnNumber: 13
+                    }, this))
+            }, void 0, false, {
+                fileName: "[project]/src/components/SignatureLogo/SignatureLogo.tsx",
+                lineNumber: 43,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/SignatureLogo/SignatureLogo.tsx",
+        lineNumber: 20,
+        columnNumber: 7
+    }, this);
+});
+_c1 = SignatureLogo;
+const __TURBOPACK__default__export__ = SignatureLogo;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "SignatureLogo$forwardRef");
+__turbopack_context__.k.register(_c1, "SignatureLogo");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/ArtistHeader/ArtistHeader.module.scss [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "artist-header": "ArtistHeader-module-scss-module__NT5Naa__artist-header",
+  "artist-header__dot": "ArtistHeader-module-scss-module__NT5Naa__artist-header__dot",
+  "artist-header__meta": "ArtistHeader-module-scss-module__NT5Naa__artist-header__meta",
+  "artist-header__name": "ArtistHeader-module-scss-module__NT5Naa__artist-header__name",
+  "sr-only": "ArtistHeader-module-scss-module__NT5Naa__sr-only",
+});
+}),
+"[project]/src/components/ArtistHeader/ArtistHeader.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>ArtistHeader
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$SignatureLogo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/SignatureLogo/SignatureLogo.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/ArtistHeader/ArtistHeader.module.scss [app-client] (css module)");
+;
+;
+;
+function ArtistHeader({ signatureRef, metadataRef } = {}) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['artist-header'],
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['artist-header__name'],
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$SignatureLogo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    ref: signatureRef,
+                    variant: "header"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+                    lineNumber: 19,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+                lineNumber: 18,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                ref: metadataRef,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['artist-header__meta'],
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "Latest Release"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['artist-header__dot'],
+                        "aria-hidden": "true"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['sr-only'],
+                        children: " • "
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+                        lineNumber: 27,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "Latin"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+                        lineNumber: 28,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+                lineNumber: 21,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/ArtistHeader/ArtistHeader.tsx",
+        lineNumber: 17,
+        columnNumber: 5
+    }, this);
+}
+_c = ArtistHeader;
+var _c;
+__turbopack_context__.k.register(_c, "ArtistHeader");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/AudioPreview/AudioPreview.module.scss [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "audio-preview": "AudioPreview-module-scss-module__gI_meq__audio-preview",
+  "audio-preview__error": "AudioPreview-module-scss-module__gI_meq__audio-preview__error",
+  "audio-preview__play-btn": "AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn",
+  "audio-preview__time": "AudioPreview-module-scss-module__gI_meq__audio-preview__time",
+  "audio-preview__waveform": "AudioPreview-module-scss-module__gI_meq__audio-preview__waveform",
+  "audio-preview__waveform--loading": "AudioPreview-module-scss-module__gI_meq__audio-preview__waveform--loading",
+  "audio-preview__waveform-area": "AudioPreview-module-scss-module__gI_meq__audio-preview__waveform-area",
+  "pulse": "AudioPreview-module-scss-module__gI_meq__pulse",
+});
+}),
+"[project]/src/components/AudioPreview/AudioPreview.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>AudioPreview
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wavesurfer$2e$js$2f$dist$2f$wavesurfer$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/wavesurfer.js/dist/wavesurfer.esm.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/AudioPreview/AudioPreview.module.scss [app-client] (css module)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+function formatTime(seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return `${m}:${s.toString().padStart(2, '0')}`;
+}
+function PlayIcon() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 20 20",
+        fill: "none",
+        "aria-hidden": "true",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+            d: "M5 3.5L16.5 10 5 16.5V3.5Z",
+            fill: "currentColor"
+        }, void 0, false, {
+            fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+            lineNumber: 20,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+        lineNumber: 19,
+        columnNumber: 5
+    }, this);
+}
+_c = PlayIcon;
+function PauseIcon() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+        width: "20",
+        height: "20",
+        viewBox: "0 0 20 20",
+        fill: "none",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                x: "4",
+                y: "3",
+                width: "4",
+                height: "14",
+                rx: "1",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                lineNumber: 28,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
+                x: "12",
+                y: "3",
+                width: "4",
+                height: "14",
+                rx: "1",
+                fill: "currentColor"
+            }, void 0, false, {
+                fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                lineNumber: 29,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+        lineNumber: 27,
+        columnNumber: 5
+    }, this);
+}
+_c1 = PauseIcon;
+function AudioPreview({ audioSrc }) {
+    _s();
+    const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const wavesurferRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const [isPlaying, setIsPlaying] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [currentTime, setCurrentTime] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [duration, setDuration] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [hasError, setHasError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AudioPreview.useEffect": ()=>{
+            if (!containerRef.current) return;
+            const ws = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$wavesurfer$2e$js$2f$dist$2f$wavesurfer$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].create({
+                container: containerRef.current,
+                waveColor: 'rgba(255, 255, 255, 0.35)',
+                progressColor: '#c97832',
+                cursorColor: 'transparent',
+                barWidth: 2,
+                barGap: 2,
+                barRadius: 2,
+                height: 36,
+                normalize: true,
+                interact: true
+            });
+            wavesurferRef.current = ws;
+            ws.load(audioSrc);
+            ws.on('ready', {
+                "AudioPreview.useEffect": ()=>{
+                    setIsLoading(false);
+                    setDuration(ws.getDuration());
+                }
+            }["AudioPreview.useEffect"]);
+            ws.on('play', {
+                "AudioPreview.useEffect": ()=>setIsPlaying(true)
+            }["AudioPreview.useEffect"]);
+            ws.on('pause', {
+                "AudioPreview.useEffect": ()=>setIsPlaying(false)
+            }["AudioPreview.useEffect"]);
+            ws.on('finish', {
+                "AudioPreview.useEffect": ()=>{
+                    setIsPlaying(false);
+                    setCurrentTime(0);
+                    ws.seekTo(0);
+                }
+            }["AudioPreview.useEffect"]);
+            ws.on('timeupdate', {
+                "AudioPreview.useEffect": (time)=>{
+                    setCurrentTime(time);
+                }
+            }["AudioPreview.useEffect"]);
+            ws.on('error', {
+                "AudioPreview.useEffect": ()=>{
+                    setHasError(true);
+                    setIsLoading(false);
+                }
+            }["AudioPreview.useEffect"]);
+            return ({
+                "AudioPreview.useEffect": ()=>{
+                    ws.destroy();
+                }
+            })["AudioPreview.useEffect"];
+        }
+    }["AudioPreview.useEffect"], [
+        audioSrc
+    ]);
+    function handlePlayPause() {
+        wavesurferRef.current?.playPause();
+    }
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['audio-preview'],
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['audio-preview__play-btn'],
+                onClick: handlePlayPause,
+                "aria-label": isPlaying ? 'Pause preview' : 'Play preview',
+                disabled: isLoading || hasError,
+                children: isPlaying ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PauseIcon, {}, void 0, false, {
+                    fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                    lineNumber: 104,
+                    columnNumber: 22
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PlayIcon, {}, void 0, false, {
+                    fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                    lineNumber: 104,
+                    columnNumber: 38
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                lineNumber: 98,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['audio-preview__waveform-area'],
+                children: hasError ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['audio-preview__error'],
+                    children: "Preview unavailable"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                    lineNumber: 109,
+                    columnNumber: 11
+                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            ref: containerRef,
+                            className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['audio-preview__waveform']} ${isLoading ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['audio-preview__waveform--loading'] : ''}`
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                            lineNumber: 112,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['audio-preview__time'],
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: formatTime(currentTime)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                                    lineNumber: 117,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    children: formatTime(duration)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                                    lineNumber: 118,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                            lineNumber: 116,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true)
+            }, void 0, false, {
+                fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+                lineNumber: 107,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/AudioPreview/AudioPreview.tsx",
+        lineNumber: 97,
+        columnNumber: 5
+    }, this);
+}
+_s(AudioPreview, "Oo6VI/ssrJpPU1dUsHuSR07WUhM=");
+_c2 = AudioPreview;
+var _c, _c1, _c2;
+__turbopack_context__.k.register(_c, "PlayIcon");
+__turbopack_context__.k.register(_c1, "PauseIcon");
+__turbopack_context__.k.register(_c2, "AudioPreview");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/CoverCard/CoverCard.module.scss [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "cover-card": "CoverCard-module-scss-module__vG487q__cover-card",
+  "cover-card__image": "CoverCard-module-scss-module__vG487q__cover-card__image",
+  "cover-card__pill": "CoverCard-module-scss-module__vG487q__cover-card__pill",
+  "cover-card__pills": "CoverCard-module-scss-module__vG487q__cover-card__pills",
+});
+}),
+"[project]/src/components/CoverCard/CoverCard.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>CoverCard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CoverCard$2f$CoverCard$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/CoverCard/CoverCard.module.scss [app-client] (css module)");
+'use client';
+;
+;
+function CoverCard({ coverSrc }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CoverCard$2f$CoverCard$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['cover-card'],
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                src: coverSrc,
+                alt: "Caramelo single cover art by Jona Ferreira",
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CoverCard$2f$CoverCard$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['cover-card__image'],
+                draggable: false,
+                onContextMenu: (e)=>e.preventDefault()
+            }, void 0, false, {
+                fileName: "[project]/src/components/CoverCard/CoverCard.tsx",
+                lineNumber: 15,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CoverCard$2f$CoverCard$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['cover-card__pills'],
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CoverCard$2f$CoverCard$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['cover-card__pill'],
+                    children: "Credits"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/CoverCard/CoverCard.tsx",
+                    lineNumber: 23,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/CoverCard/CoverCard.tsx",
+                lineNumber: 22,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/CoverCard/CoverCard.tsx",
+        lineNumber: 11,
+        columnNumber: 5
+    }, this);
+}
+_c = CoverCard;
+var _c;
+__turbopack_context__.k.register(_c, "CoverCard");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/TrackInfo/TrackInfo.module.scss [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "track-info": "TrackInfo-module-scss-module__0N3IJW__track-info",
+  "track-info__dot": "TrackInfo-module-scss-module__0N3IJW__track-info__dot",
+  "track-info__meta": "TrackInfo-module-scss-module__0N3IJW__track-info__meta",
+  "track-info__title": "TrackInfo-module-scss-module__0N3IJW__track-info__title",
+});
+}),
+"[project]/src/components/TrackInfo/TrackInfo.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>TrackInfo
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/TrackInfo/TrackInfo.module.scss [app-client] (css module)");
+;
+;
+function TrackInfo() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['track-info'],
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['track-info__title'],
+                children: "Caramelo"
+            }, void 0, false, {
+                fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+                lineNumber: 6,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['track-info__meta'],
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "Single"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['track-info__dot'],
+                        "aria-hidden": "true"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "2:17"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+                        lineNumber: 10,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['track-info__dot'],
+                        "aria-hidden": "true"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+                        lineNumber: 11,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        children: "2026"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+                lineNumber: 7,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/TrackInfo/TrackInfo.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, this);
+}
+_c = TrackInfo;
+var _c;
+__turbopack_context__.k.register(_c, "TrackInfo");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/lib/mediaEndpoints.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Central config for all protected media asset URLs.
+ * To switch to Cloudinary/S3 signed URLs, replace the values below with
+ * async calls to your signing service, e.g.:
+ *   cover: await getSignedUrl('caramelo-cover.png', { expiresIn: 300 })
+ */ __turbopack_context__.s([
+    "MEDIA_ENDPOINTS",
+    ()=>MEDIA_ENDPOINTS
+]);
+const MEDIA_ENDPOINTS = {
+    cover: '/api/media/cover',
+    preview: '/api/media/preview'
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/LandingIntro/animationGeometry.ts [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "calculatePathSchedule",
+    ()=>calculatePathSchedule,
+    "calculateSignatureTransform",
+    ()=>calculateSignatureTransform
+]);
+function assertValidRect(rect, name) {
+    const measurements = [
+        rect.left,
+        rect.top,
+        rect.width,
+        rect.height
+    ];
+    if (measurements.some((measurement)=>!Number.isFinite(measurement))) {
+        throw new RangeError(`${name} rectangle measurements must be finite`);
+    }
+}
+function calculateSignatureTransform(from, to) {
+    assertValidRect(from, "Source");
+    assertValidRect(to, "Target");
+    if (from.width <= 0) {
+        throw new RangeError("Source rectangle width must be greater than zero");
+    }
+    return {
+        x: to.left + to.width / 2 - (from.left + from.width / 2),
+        y: to.top + to.height / 2 - (from.top + from.height / 2),
+        scale: to.width / from.width
+    };
+}
+function calculatePathSchedule(lengths, totalDuration, overlap) {
+    if (!Number.isFinite(totalDuration) || totalDuration < 0) {
+        throw new RangeError("Total duration must be a finite nonnegative number");
+    }
+    if (!Number.isFinite(overlap) || overlap < 0 || overlap > totalDuration) {
+        throw new RangeError("Overlap must be finite, nonnegative, and no greater than total duration");
+    }
+    if (lengths.some((length)=>!Number.isFinite(length) || length < 0)) {
+        throw new RangeError("Path lengths must be finite nonnegative numbers");
+    }
+    if (lengths.length === 0) {
+        return [];
+    }
+    const maxLength = lengths.reduce((maximum, length)=>Math.max(maximum, length));
+    if (maxLength === 0) {
+        return lengths.map(()=>({
+                at: 0,
+                duration: 0
+            }));
+    }
+    const normalizedLengths = lengths.map((length)=>length / maxLength);
+    const normalizedTotal = normalizedLengths.reduce((sum, length)=>sum + length, 0);
+    const proportionalDuration = totalDuration - overlap;
+    const durations = normalizedLengths.map((length)=>length === 0 ? 0 : overlap + proportionalDuration * (length / normalizedTotal));
+    let cursor = 0;
+    return durations.map((duration, index)=>{
+        const at = cursor;
+        if (lengths[index] !== 0) {
+            cursor += duration - overlap;
+        }
+        return {
+            at,
+            duration
+        };
+    });
+}
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/src/components/LandingIntro/LandingIntro.module.scss [app-client] (css module)", ((__turbopack_context__) => {
+
+__turbopack_context__.v({
+  "artist-slot": "LandingIntro-module-scss-module__0vJwBG__artist-slot",
+  "item": "LandingIntro-module-scss-module__0vJwBG__item",
+  "overlay": "LandingIntro-module-scss-module__0vJwBG__overlay",
+  "overlay__signature": "LandingIntro-module-scss-module__0vJwBG__overlay__signature",
+  "page": "LandingIntro-module-scss-module__0vJwBG__page",
+  "shell": "LandingIntro-module-scss-module__0vJwBG__shell",
+});
+}),
+"[project]/src/components/LandingIntro/LandingIntro.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>LandingIntro
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@gsap/react/src/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ActionButtons/ActionButtons.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ArtistHeader/ArtistHeader.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/AudioPreview/AudioPreview.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CoverCard$2f$CoverCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/CoverCard/CoverCard.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$SignatureLogo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/SignatureLogo/SignatureLogo.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/TrackInfo/TrackInfo.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mediaEndpoints$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/mediaEndpoints.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$animationGeometry$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/LandingIntro/animationGeometry.ts [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/components/LandingIntro/LandingIntro.module.scss [app-client] (css module)");
+;
+var _s = __turbopack_context__.k.signature();
+'use client';
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].registerPlugin(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]);
+const DRAW_DURATION = 2.1;
+const DRAW_OVERLAP = 0.08;
+function LandingIntro() {
+    _s();
+    const rootRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const shellRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const overlayRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const introSignatureRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const headerSignatureRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const metadataRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const coverRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const trackRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const audioRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const actionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"])({
+        "LandingIntro.useGSAP": (_context, contextSafe)=>{
+            const root = rootRef.current;
+            const shell = shellRef.current;
+            const overlay = overlayRef.current;
+            const introSignature = introSignatureRef.current;
+            const headerSignature = headerSignatureRef.current;
+            const metadata = metadataRef.current;
+            const revealTargets = [
+                coverRef.current,
+                trackRef.current,
+                audioRef.current,
+                actionsRef.current
+            ].filter({
+                "LandingIntro.useGSAP.revealTargets": (target)=>target !== null
+            }["LandingIntro.useGSAP.revealTargets"]);
+            if (!root || !shell || !overlay || !introSignature || !headerSignature || !metadata || !contextSafe) {
+                return;
+            }
+            let cancelled = false;
+            let finalized = false;
+            let normalMotionStarted = false;
+            const activeAnimations = [];
+            const killActiveAnimations = {
+                "LandingIntro.useGSAP.killActiveAnimations": ()=>{
+                    activeAnimations.splice(0).forEach({
+                        "LandingIntro.useGSAP.killActiveAnimations": (animation)=>animation.kill()
+                    }["LandingIntro.useGSAP.killActiveAnimations"]);
+                }
+            }["LandingIntro.useGSAP.killActiveAnimations"];
+            const restoreInteraction = {
+                "LandingIntro.useGSAP.restoreInteraction": ()=>{
+                    shell.inert = false;
+                    shell.removeAttribute('inert');
+                    window.dispatchEvent(new Event('resize'));
+                }
+            }["LandingIntro.useGSAP.restoreInteraction"];
+            const showFinalState = {
+                "LandingIntro.useGSAP.showFinalState": ()=>{
+                    if (cancelled) return;
+                    finalized = true;
+                    killActiveAnimations();
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(headerSignature, {
+                        autoAlpha: 1,
+                        clearProps: 'transform'
+                    });
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(introSignature, {
+                        willChange: 'auto'
+                    });
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set([
+                        metadata,
+                        ...revealTargets
+                    ], {
+                        autoAlpha: 1,
+                        y: 0,
+                        clearProps: 'transform'
+                    });
+                    __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(overlay, {
+                        autoAlpha: 0,
+                        pointerEvents: 'none'
+                    });
+                    restoreInteraction();
+                }
+            }["LandingIntro.useGSAP.showFinalState"];
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(headerSignature, {
+                autoAlpha: 0
+            });
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(metadata, {
+                autoAlpha: 0
+            });
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(coverRef.current, {
+                autoAlpha: 0,
+                y: 18
+            });
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set([
+                trackRef.current,
+                audioRef.current,
+                actionsRef.current
+            ], {
+                autoAlpha: 0,
+                y: 12
+            });
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(overlay, {
+                autoAlpha: 1
+            });
+            const startNormalMotion = contextSafe({
+                "LandingIntro.useGSAP.startNormalMotion": ()=>{
+                    if (cancelled || finalized || normalMotionStarted) return;
+                    normalMotionStarted = true;
+                    const drawPaths = Array.from(introSignature.querySelectorAll('.signature-draw-path')).map({
+                        "LandingIntro.useGSAP.startNormalMotion.drawPaths": (path)=>({
+                                path,
+                                length: path.getTotalLength()
+                            })
+                    }["LandingIntro.useGSAP.startNormalMotion.drawPaths"]).filter({
+                        "LandingIntro.useGSAP.startNormalMotion.drawPaths": ({ length })=>length > 0
+                    }["LandingIntro.useGSAP.startNormalMotion.drawPaths"]);
+                    const fillLayer = introSignature.querySelector('.signature-fill-layer');
+                    if (fillLayer) {
+                        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(fillLayer, {
+                            autoAlpha: 0
+                        });
+                    }
+                    drawPaths.forEach({
+                        "LandingIntro.useGSAP.startNormalMotion": ({ path, length })=>{
+                            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(path, {
+                                strokeDasharray: length,
+                                strokeDashoffset: length,
+                                strokeOpacity: 1
+                            });
+                        }
+                    }["LandingIntro.useGSAP.startNormalMotion"]);
+                    const buildIntro = contextSafe({
+                        "LandingIntro.useGSAP.startNormalMotion.buildIntro": ()=>{
+                            if (cancelled || finalized) return;
+                            const schedule = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$animationGeometry$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["calculatePathSchedule"])(drawPaths.map({
+                                "LandingIntro.useGSAP.startNormalMotion.buildIntro.schedule": ({ length })=>length
+                            }["LandingIntro.useGSAP.startNormalMotion.buildIntro.schedule"]), DRAW_DURATION, DRAW_OVERLAP);
+                            const moveToHeader = contextSafe({
+                                "LandingIntro.useGSAP.startNormalMotion.buildIntro.moveToHeader": ()=>{
+                                    if (cancelled || finalized) return;
+                                    const transform = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$animationGeometry$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["calculateSignatureTransform"])(introSignature.getBoundingClientRect(), headerSignature.getBoundingClientRect());
+                                    const movement = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].to(introSignature, {
+                                        ...transform,
+                                        duration: 1,
+                                        ease: 'power3.inOut',
+                                        transformOrigin: 'center center',
+                                        onComplete: contextSafe({
+                                            "LandingIntro.useGSAP.startNormalMotion.buildIntro.moveToHeader.movement": ()=>{
+                                                if (cancelled || finalized) return;
+                                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(headerSignature, {
+                                                    autoAlpha: 1
+                                                });
+                                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(introSignature, {
+                                                    willChange: 'auto'
+                                                });
+                                                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].set(overlay, {
+                                                    autoAlpha: 0,
+                                                    pointerEvents: 'none'
+                                                });
+                                                const revealTimeline = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].timeline({
+                                                    defaults: {
+                                                        duration: 0.6,
+                                                        ease: 'power2.out'
+                                                    },
+                                                    onComplete: contextSafe({
+                                                        "LandingIntro.useGSAP.startNormalMotion.buildIntro.moveToHeader.movement.revealTimeline": ()=>{
+                                                            if (cancelled || finalized) return;
+                                                            finalized = true;
+                                                            restoreInteraction();
+                                                        }
+                                                    }["LandingIntro.useGSAP.startNormalMotion.buildIntro.moveToHeader.movement.revealTimeline"])
+                                                });
+                                                activeAnimations.push(revealTimeline);
+                                                revealTimeline.to(metadata, {
+                                                    autoAlpha: 1,
+                                                    y: 0
+                                                }, 0).to(revealTargets, {
+                                                    autoAlpha: 1,
+                                                    y: 0,
+                                                    stagger: 0.1
+                                                }, 0.1);
+                                            }
+                                        }["LandingIntro.useGSAP.startNormalMotion.buildIntro.moveToHeader.movement"])
+                                    });
+                                    activeAnimations.push(movement);
+                                }
+                            }["LandingIntro.useGSAP.startNormalMotion.buildIntro.moveToHeader"]);
+                            const drawTimeline = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].timeline({
+                                onComplete: moveToHeader
+                            });
+                            activeAnimations.push(drawTimeline);
+                            drawPaths.forEach({
+                                "LandingIntro.useGSAP.startNormalMotion.buildIntro": ({ path }, index)=>{
+                                    drawTimeline.to(path, {
+                                        strokeDashoffset: 0,
+                                        duration: schedule[index].duration,
+                                        ease: 'power2.out'
+                                    }, schedule[index].at);
+                                }
+                            }["LandingIntro.useGSAP.startNormalMotion.buildIntro"]);
+                            if (fillLayer) {
+                                drawTimeline.to(fillLayer, {
+                                    autoAlpha: 1,
+                                    duration: 0.4,
+                                    ease: 'power1.out'
+                                });
+                            }
+                            drawTimeline.to(drawPaths.map({
+                                "LandingIntro.useGSAP.startNormalMotion.buildIntro": ({ path })=>path
+                            }["LandingIntro.useGSAP.startNormalMotion.buildIntro"]), {
+                                strokeOpacity: 0,
+                                duration: 0.4,
+                                ease: 'power1.out'
+                            }, '<');
+                        }
+                    }["LandingIntro.useGSAP.startNormalMotion.buildIntro"]);
+                    const startIntro = contextSafe({
+                        "LandingIntro.useGSAP.startNormalMotion.startIntro": ()=>{
+                            if (!cancelled && !finalized) buildIntro();
+                        }
+                    }["LandingIntro.useGSAP.startNormalMotion.startIntro"]);
+                    void (document.fonts?.ready ?? Promise.resolve()).then(startIntro);
+                }
+            }["LandingIntro.useGSAP.startNormalMotion"]);
+            const finalizeForMotionPreference = contextSafe(showFinalState);
+            const motionPreference = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].matchMedia();
+            motionPreference.add({
+                reduceMotion: '(prefers-reduced-motion: reduce)',
+                noPreference: '(prefers-reduced-motion: no-preference)'
+            }, {
+                "LandingIntro.useGSAP": (mediaContext)=>{
+                    if (mediaContext.conditions?.reduceMotion) {
+                        finalizeForMotionPreference();
+                    } else if (!finalized) {
+                        startNormalMotion();
+                    }
+                }
+            }["LandingIntro.useGSAP"]);
+            return ({
+                "LandingIntro.useGSAP": ()=>{
+                    cancelled = true;
+                    motionPreference.revert();
+                    killActiveAnimations();
+                }
+            })["LandingIntro.useGSAP"];
+        }
+    }["LandingIntro.useGSAP"], {
+        scope: rootRef
+    });
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
+        ref: rootRef,
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].page,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: overlayRef,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].overlay,
+                "data-landing-intro": true,
+                "aria-hidden": "true",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['overlay__signature'],
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$SignatureLogo$2f$SignatureLogo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        ref: introSignatureRef,
+                        variant: "intro"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                        lineNumber: 251,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                    lineNumber: 250,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                lineNumber: 244,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: shellRef,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].shell,
+                "data-landing-shell": true,
+                inert: true,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"]['artist-slot'],
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ArtistHeader$2f$ArtistHeader$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            signatureRef: headerSignatureRef,
+                            metadataRef: metadataRef
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                            lineNumber: 262,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                        lineNumber: 261,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: coverRef,
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].item,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$CoverCard$2f$CoverCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            coverSrc: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mediaEndpoints$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MEDIA_ENDPOINTS"].cover
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                            lineNumber: 268,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                        lineNumber: 267,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: trackRef,
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].item,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TrackInfo$2f$TrackInfo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                            lineNumber: 271,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                        lineNumber: 270,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: audioRef,
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].item,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$AudioPreview$2f$AudioPreview$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            audioSrc: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$mediaEndpoints$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["MEDIA_ENDPOINTS"].preview
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                            lineNumber: 274,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                        lineNumber: 273,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: actionsRef,
+                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingIntro$2f$LandingIntro$2e$module$2e$scss__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].item,
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ActionButtons$2f$ActionButtons$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                            fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                            lineNumber: 277,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                        lineNumber: 276,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+                lineNumber: 255,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/LandingIntro/LandingIntro.tsx",
+        lineNumber: 243,
+        columnNumber: 5
+    }, this);
+}
+_s(LandingIntro, "L/rsoY0/3kFCs8K36NLwexK5fio=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$gsap$2f$react$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useGSAP"]
+    ];
+});
+_c = LandingIntro;
+var _c;
+__turbopack_context__.k.register(_c, "LandingIntro");
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+]);
+
+//# sourceMappingURL=src_1of6u6k._.js.map

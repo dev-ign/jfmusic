@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/components/SignatureLogo/SignatureLogo.module.scss"],"sourcesContent":[".logo {\n  --signature-brand: #843a09;\n  --signature-draw-stroke-width: 1.45;\n  --signature-reveal-stroke-width: 28;\n  --signature-initial-dash: 2000;\n\n  display: block;\n  overflow: visible;\n\n  :global(.signature-fill-layer) {\n    fill: var(--signature-brand);\n  }\n}\n\n.intro {\n  :global(.signature-fill-layer) {\n    opacity: 0;\n  }\n\n  :global(.signature-draw-path) {\n    fill: none;\n    stroke: var(--signature-brand);\n    stroke-linecap: round;\n    stroke-linejoin: round;\n    stroke-width: var(--signature-draw-stroke-width);\n  }\n\n  :global(.signature-reveal-mask-path) {\n    fill: none;\n    stroke: #fff;\n    stroke-dasharray: var(--signature-initial-dash);\n    stroke-dashoffset: var(--signature-initial-dash);\n    stroke-linecap: butt;\n    stroke-linejoin: round;\n    stroke-opacity: 0;\n    stroke-width: var(--signature-reveal-stroke-width);\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;AASE;;;;AAMA;;;;AAIA;;;;;;;;AAQA"}}]
+}

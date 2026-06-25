@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/components/TrackInfo/TrackInfo.module.scss"],"sourcesContent":[".track-info {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  text-align: center;\n}\n\n.track-info__title {\n  font-family: var(--font-sans);\n  font-size: 24px;\n  font-weight: 700;\n  color: var(--color-text-primary);\n  letter-spacing: 0.24px;\n  line-height: normal;\n}\n\n.track-info__meta {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  font-family: var(--font-meta);\n  font-size: 12px;\n  font-weight: 400;\n  color: var(--color-text-secondary);\n}\n\n.track-info__dot {\n  display: inline-block;\n  width: 4px;\n  height: 4px;\n  border-radius: 50%;\n  background-color: var(--color-text-secondary);\n  flex-shrink: 0;\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;AAQA;;;;;;;;;AASA;;;;;;;;;;AAUA"}}]
+}

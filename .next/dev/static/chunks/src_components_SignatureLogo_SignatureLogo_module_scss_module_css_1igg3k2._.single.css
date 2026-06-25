@@ -1,0 +1,38 @@
+/* [project]/src/components/SignatureLogo/SignatureLogo.module.scss.module.css [app-client] (css) */
+.SignatureLogo-module-scss-module__cIcHmG__logo {
+  --signature-brand: #843a09;
+  --signature-draw-stroke-width: 1.45;
+  --signature-reveal-stroke-width: 28;
+  --signature-initial-dash: 2000;
+  display: block;
+  overflow: visible;
+}
+
+.SignatureLogo-module-scss-module__cIcHmG__logo .signature-fill-layer {
+  fill: var(--signature-brand);
+}
+
+.SignatureLogo-module-scss-module__cIcHmG__intro .signature-fill-layer {
+  opacity: 0;
+}
+
+.SignatureLogo-module-scss-module__cIcHmG__intro .signature-draw-path {
+  fill: none;
+  stroke: var(--signature-brand);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--signature-draw-stroke-width);
+}
+
+.SignatureLogo-module-scss-module__cIcHmG__intro .signature-reveal-mask-path {
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: var(--signature-initial-dash);
+  stroke-dashoffset: var(--signature-initial-dash);
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  stroke-opacity: 0;
+  stroke-width: var(--signature-reveal-stroke-width);
+}
+
+/*# sourceMappingURL=src_components_SignatureLogo_SignatureLogo_module_scss_module_css_1igg3k2._.single.css.map*/

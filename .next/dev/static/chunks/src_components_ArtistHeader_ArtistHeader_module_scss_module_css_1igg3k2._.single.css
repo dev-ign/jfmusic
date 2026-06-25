@@ -1,0 +1,20 @@
+/* [project]/src/components/ArtistHeader/ArtistHeader.module.scss.module.css [app-client] (css) */
+.ArtistHeader-module-scss-module__NT5Naa__artist-header {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  display: flex;
+}
+
+.ArtistHeader-module-scss-module__NT5Naa__artist-header__name {
+  width: min(100%, clamp(180px, 28vw, 300px));
+  line-height: 0;
+}
+
+.ArtistHeader-module-scss-module__NT5Naa__artist-header__name svg {
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=src_components_ArtistHeader_ArtistHeader_module_scss_module_css_1igg3k2._.single.css.map*/

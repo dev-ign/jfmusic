@@ -1,0 +1,34 @@
+/* [project]/src/app/page.module.scss.module.css [app-client] (css) */
+.page-module-scss-module__rcUngW__release-page {
+  place-items: center;
+  min-height: 100svh;
+  display: grid;
+  overflow: hidden;
+}
+
+.page-module-scss-module__rcUngW__release-shell {
+  grid-template-rows: auto auto auto auto auto;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(10px, 1.8vh, 24px);
+  width: min(100%, 1200px);
+  min-height: 100svh;
+  padding: clamp(16px, 3vh, 48px) clamp(20px, 4vw, 64px);
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .page-module-scss-module__rcUngW__release-page {
+    place-items: start center;
+    overflow: auto;
+  }
+
+  .page-module-scss-module__rcUngW__release-shell {
+    align-content: start;
+    gap: clamp(12px, 3vw, 20px);
+    min-height: 100svh;
+    padding-block: 32px;
+  }
+}
+
+/*# sourceMappingURL=src_app_page_module_scss_module_css_1igg3k2._.single.css.map*/

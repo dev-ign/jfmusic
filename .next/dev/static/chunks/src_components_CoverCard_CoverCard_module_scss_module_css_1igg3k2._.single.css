@@ -1,0 +1,112 @@
+/* [project]/src/components/CoverCard/CoverCard.module.scss.module.css [app-client] (css) */
+.CoverCard-module-scss-module__vG487q__cover-card {
+  perspective: 1300px;
+  -webkit-user-select: none;
+  user-select: none;
+  flex-shrink: 0;
+  width: 298px;
+  height: 298px;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .8s cubic-bezier(.45, .05, .2, 1);
+  position: relative;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card--flipped .CoverCard-module-scss-module__vG487q__cover-card__inner {
+  transform: rotateY(180deg);
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__face {
+  backface-visibility: hidden;
+  border-radius: 22px;
+  position: absolute;
+  inset: 0;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__face--front {
+  box-shadow: 0 25px 44px -16px #3a1c0457;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__face--back {
+  background: linear-gradient(160deg, #faf0d8 0%, #f2e0bc 100%);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 28px;
+  display: flex;
+  transform: rotateY(180deg);
+  box-shadow: 0 34px 64px -16px #3a1c0480, 0 12px 26px -8px #3a1c0457, 0 0 0 1px #fff9, inset 0 0 0 1px #78461a1f;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__image {
+  object-fit: cover;
+  pointer-events: none;
+  border-radius: 22px;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__gloss {
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background: linear-gradient(135deg, #fff6, #fff0 36%);
+  border-radius: 22px;
+  position: absolute;
+  inset: 0;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__credits-eyebrow {
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #3c200880;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  margin-bottom: 20px;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__credits {
+  text-align: center;
+  flex-direction: column;
+  gap: 13px;
+  margin: 0;
+  display: flex;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__credit {
+  font-family: var(--font-sans);
+  color: #2818088c;
+  justify-content: center;
+  align-items: baseline;
+  font-size: 13.5px;
+  line-height: 1.35;
+  display: flex;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__credit dt, .CoverCard-module-scss-module__vG487q__cover-card__credit dd {
+  margin: 0;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__credit dt:after {
+  content: " · ";
+  color: #28180859;
+}
+
+.CoverCard-module-scss-module__vG487q__cover-card__credit dd {
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .CoverCard-module-scss-module__vG487q__cover-card__inner {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=src_components_CoverCard_CoverCard_module_scss_module_css_1igg3k2._.single.css.map*/

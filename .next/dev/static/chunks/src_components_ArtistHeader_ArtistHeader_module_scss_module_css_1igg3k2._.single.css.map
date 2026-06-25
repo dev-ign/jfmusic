@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///turbopack:///[project]/src/components/ArtistHeader/ArtistHeader.module.scss"],"sourcesContent":[".artist-header {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0;\n  text-align: center;\n}\n\n.artist-header__name {\n  width: min(100%, clamp(180px, 28vw, 300px));\n  line-height: 0;\n\n  svg {\n    width: 100%;\n    height: auto;\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;AAQA;;;;;AAIE"}}]
+}

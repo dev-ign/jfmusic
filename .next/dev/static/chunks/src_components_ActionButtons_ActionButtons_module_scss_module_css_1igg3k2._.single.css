@@ -1,0 +1,86 @@
+/* [project]/src/components/ActionButtons/ActionButtons.module.scss.module.css [app-client] (css) */
+.ActionButtons-module-scss-module__GdiHYG__action-buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(16px, 4vw, 38px);
+  display: flex;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn {
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  letter-spacing: .16px;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity .15s;
+  display: inline-flex;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn:focus-visible {
+  outline: 2px solid var(--color-btn-primary-bg);
+  outline-offset: 3px;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn:hover {
+  opacity: .8;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--primary {
+  background: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--outline {
+  border: 1px solid var(--color-btn-outline-border);
+  color: var(--color-btn-outline-text);
+  background: none;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__btn--icon-only {
+  padding: 12px;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__group {
+  position: relative;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__menu {
+  z-index: 10;
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid #00000014;
+  border-radius: 12px;
+  min-width: 160px;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  overflow: hidden;
+  transform: translateX(-50%);
+  box-shadow: 0 8px 32px #0000001f;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__menu-item {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: background .1s;
+  display: block;
+}
+
+.ActionButtons-module-scss-module__GdiHYG__action-buttons__menu-item:hover {
+  background: #0000000a;
+}
+
+/*# sourceMappingURL=src_components_ActionButtons_ActionButtons_module_scss_module_css_1igg3k2._.single.css.map*/

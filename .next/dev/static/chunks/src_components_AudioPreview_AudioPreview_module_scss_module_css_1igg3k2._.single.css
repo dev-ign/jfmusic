@@ -1,0 +1,80 @@
+/* [project]/src/components/AudioPreview/AudioPreview.module.scss.module.css [app-client] (css) */
+.AudioPreview-module-scss-module__gI_meq__audio-preview {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn {
+  background: var(--color-player-bg);
+  width: 46px;
+  height: 46px;
+  color: var(--color-player-icon);
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .15s;
+  display: flex;
+  box-shadow: 0 8px 18px -4px #28180480, inset 0 1px #ffffff1f;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn:not(:disabled):hover {
+  opacity: .85;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__play-btn:focus-visible {
+  outline: 2px solid var(--color-player-bg);
+  outline-offset: 3px;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__waveform-area {
+  flex: none;
+  align-items: center;
+  width: 240px;
+  height: 46px;
+  display: grid;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__waveform {
+  width: 100%;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__waveform--loading {
+  opacity: .4;
+  animation: 1.4s ease-in-out infinite AudioPreview-module-scss-module__gI_meq__pulse;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__waveform-hidden {
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.AudioPreview-module-scss-module__gI_meq__audio-preview__error {
+  font-family: var(--font-meta);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+@keyframes AudioPreview-module-scss-module__gI_meq__pulse {
+  0%, 100% {
+    opacity: .4;
+  }
+
+  50% {
+    opacity: .7;
+  }
+}
+
+/*# sourceMappingURL=src_components_AudioPreview_AudioPreview_module_scss_module_css_1igg3k2._.single.css.map*/

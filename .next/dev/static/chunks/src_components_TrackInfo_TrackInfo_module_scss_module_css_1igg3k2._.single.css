@@ -1,0 +1,38 @@
+/* [project]/src/components/TrackInfo/TrackInfo.module.scss.module.css [app-client] (css) */
+.TrackInfo-module-scss-module__0N3IJW__track-info {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  display: flex;
+}
+
+.TrackInfo-module-scss-module__0N3IJW__track-info__title {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  letter-spacing: .24px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.TrackInfo-module-scss-module__0N3IJW__track-info__meta {
+  font-family: var(--font-meta);
+  color: var(--color-text-secondary);
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+}
+
+.TrackInfo-module-scss-module__0N3IJW__track-info__dot {
+  background-color: var(--color-text-secondary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=src_components_TrackInfo_TrackInfo_module_scss_module_css_1igg3k2._.single.css.map*/
