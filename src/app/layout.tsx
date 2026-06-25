@@ -24,11 +24,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Caramelo — Jona Ferreira',
-  description: 'Latest single by Jona Ferreira. Listen now on Spotify.',
+  title: 'Jona Ferreira Music',
+  description: 'Latest single by Jona Ferreira. Listen now on all streaming platforms.',
   openGraph: {
-    title: 'Caramelo — Jona Ferreira',
-    description: 'Latest single by Jona Ferreira. Listen now on Spotify.',
+    title: 'Jona Ferreira Music',
+    description: 'Latest single by Jona Ferreira. Listen now on all streaming platforms.',
     type: 'music.song',
   },
 };
