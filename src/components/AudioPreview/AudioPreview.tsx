@@ -8,11 +8,7 @@ interface AudioPreviewProps {
   audioSrc: string;
   onPlaybackChange?: (isPlaying: boolean) => void;
   onQualifiedFinish?: (reset: () => void) => void;
-}
-
-interface PendingReset {
-  active: boolean;
-  generation: number;
+  showWaveform?: boolean;
 }
 
 function PlayIcon() {
@@ -36,13 +32,14 @@ export default function AudioPreview({
   audioSrc,
   onPlaybackChange,
   onQualifiedFinish,
+  showWaveform = true,
 }: AudioPreviewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const wavesurferRef = useRef<WaveSurfer | null>(null);
   const isPlayingRef = useRef(false);
   const peakPlaybackProgressRef = useRef(0);
-  const generationRef = useRef(0);
-  const pendingResetRef = useRef<PendingReset | null>(null);
+  const hasPromptedThisPlaybackRef = useRef(false);
+  const playbackFinishedRef = useRef(false);
   const onPlaybackChangeRef = useRef(onPlaybackChange);
   const onQualifiedFinishRef = useRef(onQualifiedFinish);
 
@@ -58,18 +55,13 @@ export default function AudioPreview({
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const generation = generationRef.current + 1;
-    generationRef.current = generation;
-
-    const previousReset = pendingResetRef.current;
-    if (previousReset) previousReset.active = false;
-    pendingResetRef.current = null;
-
     if (isPlayingRef.current) {
       onPlaybackChangeRef.current?.(false);
     }
     isPlayingRef.current = false;
     peakPlaybackProgressRef.current = 0;
+    hasPromptedThisPlaybackRef.current = false;
+    playbackFinishedRef.current = false;
     setIsPlaying(false);
     setIsLoading(true);
     setHasError(false);
@@ -106,11 +98,10 @@ export default function AudioPreview({
     };
 
     ws.on('play', () => {
-      const pendingReset = pendingResetRef.current;
-      if (pendingReset?.generation === generation) {
-        pendingReset.active = false;
-        pendingResetRef.current = null;
+      if (playbackFinishedRef.current) {
+        playbackFinishedRef.current = false;
         peakPlaybackProgressRef.current = 0;
+        hasPromptedThisPlaybackRef.current = false;
       }
 
       reportPlayback(true);
@@ -127,42 +118,21 @@ export default function AudioPreview({
         peakPlaybackProgressRef.current,
         Math.min(currentTime / duration, 1),
       );
+
+      if (
+        peakPlaybackProgressRef.current >= 0.9 &&
+        !hasPromptedThisPlaybackRef.current
+      ) {
+        hasPromptedThisPlaybackRef.current = true;
+        onQualifiedFinishRef.current?.(() => {});
+      }
     });
 
     ws.on('finish', () => {
       reportPlayback(false);
-
-      const pendingReset: PendingReset = {
-        active: true,
-        generation,
-      };
-      pendingResetRef.current = pendingReset;
-
-      const reset = () => {
-        if (!pendingReset.active) return;
-
-        pendingReset.active = false;
-        if (pendingResetRef.current === pendingReset) {
-          pendingResetRef.current = null;
-        }
-        if (
-          generationRef.current !== generation ||
-          wavesurferRef.current !== ws
-        ) {
-          return;
-        }
-
-        ws.seekTo(0);
-        peakPlaybackProgressRef.current = 0;
-      };
-
-      const onQualifiedFinish = onQualifiedFinishRef.current;
-      if (peakPlaybackProgressRef.current >= 0.85 && onQualifiedFinish) {
-        onQualifiedFinish(reset);
-        return;
-      }
-
-      reset();
+      playbackFinishedRef.current = true;
+      ws.seekTo(0);
+      peakPlaybackProgressRef.current = 0;
     });
 
     ws.on('error', () => {
@@ -171,11 +141,6 @@ export default function AudioPreview({
     });
 
     return () => {
-      const pendingReset = pendingResetRef.current;
-      if (pendingReset?.generation === generation) {
-        pendingReset.active = false;
-        pendingResetRef.current = null;
-      }
       if (wavesurferRef.current === ws) {
         wavesurferRef.current = null;
       }
@@ -198,15 +163,23 @@ export default function AudioPreview({
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </button>
 
-      <div className={styles['audio-preview__waveform-area']}>
-        {hasError ? (
-          <p className={styles['audio-preview__error']}>Preview unavailable</p>
-        ) : null}
+      {showWaveform ? (
+        <div className={styles['audio-preview__waveform-area']}>
+          {hasError ? (
+            <p className={styles['audio-preview__error']}>Preview unavailable</p>
+          ) : null}
+          <div
+            ref={containerRef}
+            className={`${styles['audio-preview__waveform']} ${isLoading ? styles['audio-preview__waveform--loading'] : ''}`}
+          />
+        </div>
+      ) : (
         <div
           ref={containerRef}
-          className={`${styles['audio-preview__waveform']} ${isLoading ? styles['audio-preview__waveform--loading'] : ''}`}
+          className={styles['audio-preview__waveform-hidden']}
+          aria-hidden="true"
         />
-      </div>
+      )}
     </div>
   );
 }

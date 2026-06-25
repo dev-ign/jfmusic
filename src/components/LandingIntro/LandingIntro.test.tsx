@@ -13,6 +13,26 @@ import LandingIntro from './LandingIntro';
 
 type TweenVars = Record<string, unknown> & { onComplete?: () => void };
 
+const SPOTIFY_URL =
+  'https://open.spotify.com/track/2sDSnFmxyLvWgXQZm5Mdt2?si=6c58b7c468d24c4d';
+
+const SOCIAL_URLS = {
+  Instagram: 'https://www.instagram.com/jonaferreira',
+  TikTok: 'https://www.tiktok.com/@jonafmusic',
+  YouTube: 'https://www.youtube.com/channel/UCWa1kPIczNX6qKZ8hMbNdsg',
+} as const;
+
+const PLATFORM_URLS = {
+  'Apple Music':
+    'https://music.apple.com/us/album/caramelo/6773485931?i=6773485933',
+  Spotify: SPOTIFY_URL,
+  YouTube:
+    'https://www.youtube.com/watch?v=sb6EryPbY_A&list=OLAK5uy_lsz4B2564DZiRfBbBdES-dz5YEkTmlTn0',
+  'Amazon Music':
+    'https://amazon.com/music/player/albums/B0H31RQSRH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_fE6GMFJbRU5FpVcsEpHhibWDN',
+  Tidal: 'https://tidal.com/track/528205807/u',
+} as const;
+
 const orchestrationMock = vi.hoisted(() => ({
   canShow: true,
   reset: vi.fn(),
@@ -171,6 +191,7 @@ vi.mock('@/components/AudioPreview/AudioPreview', () => ({
   }: {
     onPlaybackChange?: (isPlaying: boolean) => void;
     onQualifiedFinish?: (reset: () => void) => void;
+    showWaveform?: boolean;
   }) => (
     <div>
       <button type="button" aria-label="Play preview" disabled />
@@ -191,17 +212,10 @@ vi.mock('@/components/AudioPreview/AudioPreview', () => ({
 }));
 
 vi.mock('@/components/CoverCard/CoverCard', () => ({
-  default: ({
-    isPlaying,
-    isSettling,
-  }: {
-    isPlaying?: boolean;
-    isSettling?: boolean;
-  }) => (
+  default: ({ isFlipped }: { isFlipped?: boolean }) => (
     <div
       data-testid="cover-card"
-      data-playing={String(Boolean(isPlaying))}
-      data-settling={String(Boolean(isSettling))}
+      data-flipped={String(Boolean(isFlipped))}
     >
       <span
         role="img"
@@ -287,22 +301,231 @@ afterEach(() => {
 });
 
 describe('LandingIntro', () => {
-  it('passes preview playback state through to the cover', () => {
+  it('controls the cover face from the arc nav buttons', () => {
     render(<LandingIntro />);
 
     expect(screen.getByTestId('cover-card')).toHaveAttribute(
-      'data-playing',
+      'data-flipped',
       'false',
     );
 
-    fireEvent.click(
-      screen.getByRole('button', { name: 'Report preview playing' }),
-    );
-
+    fireEvent.click(screen.getByRole('button', { name: 'Credits view' }));
     expect(screen.getByTestId('cover-card')).toHaveAttribute(
-      'data-playing',
+      'data-flipped',
       'true',
     );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Cover view' }));
+    expect(screen.getByTestId('cover-card')).toHaveAttribute(
+      'data-flipped',
+      'false',
+    );
+  });
+
+  it('exposes the selected release view and follow-open state', () => {
+    render(<LandingIntro />);
+    const home = screen.getByRole('button', { name: 'Cover view' });
+    const credits = screen.getByRole('button', { name: 'Credits view' });
+    const lyrics = screen.getByRole('button', { name: 'Lyrics view' });
+    const followBtn = screen.getByRole('button', { name: 'Follow Jona Ferreira' });
+
+    expect(home).toHaveAttribute('aria-pressed', 'true');
+    expect(credits).toHaveAttribute('aria-pressed', 'false');
+    expect(lyrics).toHaveAttribute('aria-pressed', 'false');
+    expect(followBtn).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(credits);
+    expect(home).toHaveAttribute('aria-pressed', 'false');
+    expect(credits).toHaveAttribute('aria-pressed', 'true');
+    expect(lyrics).toHaveAttribute('aria-pressed', 'false');
+
+    fireEvent.click(lyrics);
+    expect(home).toHaveAttribute('aria-pressed', 'false');
+    expect(credits).toHaveAttribute('aria-pressed', 'false');
+    expect(lyrics).toHaveAttribute('aria-pressed', 'true');
+
+    fireEvent.click(home);
+    expect(home).toHaveAttribute('aria-pressed', 'true');
+    expect(credits).toHaveAttribute('aria-pressed', 'false');
+    expect(lyrics).toHaveAttribute('aria-pressed', 'false');
+
+    fireEvent.click(followBtn);
+    expect(followBtn).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('keeps the artist heading outside the follow button and puts follow in the player row', () => {
+    render(<LandingIntro />);
+    const heading = screen.getByRole('heading', {
+      level: 1,
+      name: 'Jona Ferreira',
+    });
+    const followButton = screen.getByRole('button', {
+      name: 'Follow Jona Ferreira',
+    });
+
+    // Heading must not be inside any button
+    expect(heading.closest('button')).toBeNull();
+    // Follow button must not contain the heading
+    expect(followButton).not.toContainElement(heading);
+
+    // Opening the follow menu shows the social links as menu items
+    fireEvent.click(followButton);
+    expect(followButton).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('menuitem', { name: 'Instagram' })).toBeInTheDocument();
+  });
+
+  it('styles arc nav and follow controls with premium material language', () => {
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+    const dotRule = css.match(/\.disc-nav-band__dot\s*\{([^}]*)\}/)?.[1];
+    const lblRule = css.match(/\.disc-nav-band__btn\s*\{([^}]*)\}/)?.[1];
+    const bandRule = css.match(/\.disc-nav-band\s*\{([^}]*)\}/)?.[1];
+    const followMenuRule = css.match(/\.follow-menu\s*\{([^}]*)\}/)?.[1];
+
+    // Indicator is a bronze dot
+    expect(dotRule).toMatch(/background:/);
+    // Band is a pill shape with 3D perspective
+    expect(bandRule).toMatch(/border-radius:\s*999px/);
+    // Inactive labels stay transparent while the active state owns the capsule
+    expect(lblRule).toMatch(/text-transform:\s*uppercase/);
+    expect(lblRule).toMatch(/background:\s*transparent/);
+    // Follow menu uses glass treatment
+    expect(followMenuRule).toMatch(/backdrop-filter:\s*blur\(/);
+    expect(css).toMatch(
+      /@media\s*\(prefers-reduced-motion:\s*reduce\)[\s\S]*\.stream-menu[\s\S]*transition:\s*none/,
+    );
+  });
+
+  it('renders no waveform in the player row', () => {
+    const { container } = render(<LandingIntro />);
+    const playerRow = container.querySelector('[data-player-row]');
+    expect(playerRow).not.toBeNull();
+    expect(playerRow?.querySelector('[class*="waveform-area"]')).toBeNull();
+  });
+
+  it('mounts a compact nav band with all three navigation buttons inside it', () => {
+    const { container } = render(<LandingIntro />);
+    const band = container.querySelector('[data-disc-nav-band]');
+    expect(band).not.toBeNull();
+
+    const lyricsBtn = screen.getByRole('button', { name: 'Lyrics view' });
+    const homeBtn = screen.getByRole('button', { name: 'Cover view' });
+    const creditsBtn = screen.getByRole('button', { name: 'Credits view' });
+
+    expect(lyricsBtn.closest('[data-disc-nav-band]')).toBe(band);
+    expect(homeBtn.closest('[data-disc-nav-band]')).toBe(band);
+    expect(creditsBtn.closest('[data-disc-nav-band]')).toBe(band);
+  });
+
+  it('scales the stage outside the existing disc transform chain', () => {
+    const { container } = render(<LandingIntro />);
+    const stageScale = container.querySelector('[data-stage-scale]');
+    const shell = container.querySelector('[data-landing-shell]');
+    const discTilt = container.querySelector('[data-disc-tilt]');
+
+    expect(stageScale).not.toBeNull();
+    expect(stageScale).toContainElement(shell);
+    expect(shell).toContainElement(discTilt);
+    expect(stageScale).not.toBe(discTilt);
+  });
+
+  it('drives responsive composition geometry through stage custom properties', () => {
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+
+    for (const property of [
+      '--stage-scale',
+      '--stage-offset-y',
+      '--cover-offset-y',
+      '--title-offset-y',
+      '--disc-offset-y',
+      '--nav-offset-y',
+      '--control-gap',
+    ]) {
+      expect(css).toContain(property);
+    }
+
+    expect(css).toMatch(
+      /\.stage-scale\s*\{[\s\S]*transform:[^;]*scale\(var\(--stage-scale\)\)/,
+    );
+    expect(css).toMatch(
+      /\.disc-wrap\s*\{[\s\S]*top:\s*var\(--disc-offset-y\)/,
+    );
+  });
+
+  it('integrates a curved premium nav with responsive and reduced-motion tuning', () => {
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+    const globals = readFileSync('src/app/globals.scss', 'utf8');
+    const bandRule = css.match(/\.disc-nav-band\s*\{([^}]*)\}/)?.[1];
+    const activeRule = css.match(
+      /\.disc-nav-band__btn--active\s*\{([^}]*)\}/,
+    )?.[1];
+
+    expect(bandRule).toMatch(/perspective\(/);
+    expect(bandRule).toMatch(/rotateX\(/);
+    expect(bandRule).toMatch(/scaleY\(/);
+    expect(bandRule).toMatch(/transform-origin:/);
+    expect(bandRule).toMatch(/border-radius:\s*999px/);
+
+    expect(activeRule).toMatch(/background:/);
+    expect(activeRule).toMatch(/border:/);
+    expect(activeRule).toMatch(/box-shadow:/);
+
+    expect(css).toMatch(
+      /@media\s*\(max-height:\s*667px\)[\s\S]*--stage-scale:[\s\S]*--disc-offset-y:[\s\S]*--control-gap:/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(prefers-reduced-motion:\s*reduce\)[\s\S]*\.disc-nav-band[\s\S]*transition:\s*none/,
+    );
+    expect(globals).toMatch(
+      /html,\s*body\s*\{[\s\S]*height:\s*100%[\s\S]*overflow:\s*hidden/,
+    );
+    expect(css).toMatch(
+      /\.page\s*\{[\s\S]*overflow:\s*hidden;[\s\S]*overflow:\s*clip;/,
+    );
+  });
+
+  it('uses a thin glass rail, a Lyrics-only transparent stage, and a red heart modifier', () => {
+    const { container } = render(<LandingIntro />);
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+    const bandRule = css.match(/\.disc-nav-band\s*\{([^}]*)\}/)?.[1];
+    const buttonRule = css.match(/\.disc-nav-band__btn\s*\{([^}]*)\}/)?.[1];
+    const activeRule = css.match(
+      /\.disc-nav-band__btn--active\s*\{([^}]*)\}/,
+    )?.[1];
+    const lyricsRule = css.match(/\.lyrics\s*\{([^}]*)\}/)?.[1];
+    const heartRule = css.match(/\.btn-icon--heart\s*\{([^}]*)\}/)?.[1];
+
+    expect(bandRule).toMatch(/height:\s*(?:3[0-9]|4[0-4])px/);
+    expect(bandRule).toMatch(/border-radius:\s*999px/);
+    expect(bandRule).toMatch(/perspective\(800px\)/);
+    expect(bandRule).toMatch(/rotateX\(14deg\)/);
+    expect(bandRule).toMatch(/scaleY\(0\.86\)/);
+    expect(bandRule).toMatch(/rgba\([^)]*,\s*0\.(?:0[4-9]|[1-3][0-9])\)/);
+
+    expect(buttonRule).toMatch(/background:\s*transparent/);
+    expect(activeRule).toMatch(/background:/);
+    expect(activeRule).toMatch(/box-shadow:/);
+
+    expect(lyricsRule).toMatch(/background:\s*transparent/);
+    expect(lyricsRule).toMatch(/border:\s*0/);
+    expect(lyricsRule).toMatch(/box-shadow:\s*none/);
+    expect(lyricsRule).toMatch(/backdrop-filter:\s*none/);
+
+    expect(heartRule).toMatch(/color:\s*#d83b32/);
+    expect(
+      container.querySelector('[data-heart-control]'),
+    ).not.toBeNull();
   });
 
   it('reserves an eligible finish, then marks and resets only after the modal commits open', () => {
@@ -328,10 +551,6 @@ describe('LandingIntro', () => {
 
     expect(orchestrationMock.recordCompletion).toHaveBeenCalledOnce();
     expect(orchestrationMock.markShown).not.toHaveBeenCalled();
-    expect(screen.getByTestId('cover-card')).toHaveAttribute(
-      'data-settling',
-      'true',
-    );
     expect(screen.queryByTestId('post-preview-modal')).not.toBeInTheDocument();
     expect(orchestrationMock.markShown).not.toHaveBeenCalled();
     expect(orchestrationMock.reset).not.toHaveBeenCalled();
@@ -383,8 +602,9 @@ describe('LandingIntro', () => {
     expect(orchestrationMock.reset).toHaveBeenCalledOnce();
   });
 
-  it('resets immediately without mounting the modal when eligibility is denied', () => {
+  it('opens on playback even when an earlier cooldown would have denied it', () => {
     orchestrationMock.canShow = false;
+    vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
 
     render(<LandingIntro />);
     fireEvent.click(
@@ -392,9 +612,10 @@ describe('LandingIntro', () => {
     );
 
     expect(orchestrationMock.recordCompletion).toHaveBeenCalledOnce();
-    expect(orchestrationMock.markShown).not.toHaveBeenCalled();
-    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
-    expect(screen.queryByTestId('post-preview-modal')).not.toBeInTheDocument();
+    expect(screen.getByTestId('post-preview-modal')).toHaveAttribute(
+      'data-open',
+      'true',
+    );
   });
 
   it('does not mark shown or reset when unmounted during the cinematic delay', () => {
@@ -415,7 +636,7 @@ describe('LandingIntro', () => {
     expect(orchestrationMock.reset).not.toHaveBeenCalled();
   });
 
-  it('does not reopen after a second qualified finish on the same mounted page', () => {
+  it('reopens after a second playback on the same mounted page', () => {
     vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })));
 
     render(<LandingIntro />);
@@ -435,9 +656,11 @@ describe('LandingIntro', () => {
       screen.getByRole('button', { name: 'Report qualified finish' }),
     );
 
-    expect(orchestrationMock.markShown).toHaveBeenCalledOnce();
-    expect(orchestrationMock.reset).toHaveBeenCalledOnce();
-    expect(screen.queryByTestId('post-preview-modal')).not.toBeInTheDocument();
+    expect(orchestrationMock.markShown).toHaveBeenCalledTimes(2);
+    expect(screen.getByTestId('post-preview-modal')).toHaveAttribute(
+      'data-open',
+      'true',
+    );
   });
 
   it('records dismissal when the modal requests close', () => {
@@ -563,7 +786,7 @@ describe('LandingIntro', () => {
     ).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Play preview' })).toBeDisabled();
     expect(
-      screen.getByRole('link', { name: 'Listen to Caramelo on Spotify' }),
+      screen.getByRole('link', { name: 'Stream Caramelo on Spotify' }),
     ).toBeInTheDocument();
 
     const shell = container.querySelector('[data-landing-shell]');
@@ -577,6 +800,190 @@ describe('LandingIntro', () => {
     expect(introSignature).not.toHaveAttribute('role');
     expect(introSignature?.querySelector('.signature-draw-layer')).toBeInTheDocument();
     expect(headerSignature.querySelector('.signature-draw-layer')).not.toBeInTheDocument();
+  });
+
+  it('renders only the approved social destinations', () => {
+    render(<LandingIntro />);
+
+    // Social links are not in the DOM until the follow menu opens
+    for (const label of Object.keys(SOCIAL_URLS)) {
+      expect(screen.queryByRole('link', { name: label })).not.toBeInTheDocument();
+    }
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'Follow Jona Ferreira' }),
+    );
+
+    for (const [label, href] of Object.entries(SOCIAL_URLS)) {
+      // Social links use role="menuitem" inside the follow menu
+      const item = screen.getByRole('menuitem', { name: label });
+      expect(item).toHaveAttribute('href', href);
+      expect(item).toHaveAttribute('target', '_blank');
+      expect(item).toHaveAttribute('rel', 'noopener noreferrer');
+      // Menu items use tabIndex=-1 (roving focus via arrow keys per ARIA menu pattern)
+      expect(item).toHaveAttribute('tabindex', '-1');
+    }
+
+    expect(
+      screen.queryByRole('menuitem', { name: 'X / Twitter' }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('menuitem', { name: 'Spotify' }),
+    ).not.toBeInTheDocument();
+  });
+
+  it('uses Spotify for the primary and heart links', () => {
+    render(<LandingIntro />);
+
+    const primaryLink = screen.getByRole('link', {
+      name: 'Stream Caramelo on Spotify',
+    });
+    const heartLink = screen.getByRole('link', {
+      name: 'Open Caramelo on Spotify',
+    });
+
+    for (const link of [primaryLink, heartLink]) {
+      expect(link).toHaveAttribute('href', SPOTIFY_URL);
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    }
+  });
+
+  it('opens the platform menu and renders all streaming destinations', () => {
+    render(<LandingIntro />);
+    const trigger = screen.getByRole('button', {
+      name: 'More streaming platforms',
+    });
+
+    expect(trigger).toHaveAttribute('aria-haspopup', 'menu');
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(trigger);
+
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('menu')).toBeInTheDocument();
+    expect(screen.getAllByRole('menuitem')).toHaveLength(5);
+    expect(screen.getByRole('menuitem', { name: 'Apple Music' })).toHaveFocus();
+
+    for (const [label, href] of Object.entries(PLATFORM_URLS)) {
+      const link = screen.getByRole('menuitem', { name: label });
+      expect(link).toHaveAttribute('href', href);
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    }
+  });
+
+  it('cycles platform menu focus with arrow, Home, and End keys', () => {
+    render(<LandingIntro />);
+    const trigger = screen.getByRole('button', {
+      name: 'More streaming platforms',
+    });
+
+    fireEvent.click(trigger);
+
+    const menu = screen.getByRole('menu');
+    const appleMusic = screen.getByRole('menuitem', { name: 'Apple Music' });
+    const spotify = screen.getByRole('menuitem', { name: 'Spotify' });
+    const tidal = screen.getByRole('menuitem', { name: 'Tidal' });
+
+    expect(appleMusic).toHaveFocus();
+
+    fireEvent.keyDown(menu, { key: 'ArrowDown' });
+    expect(spotify).toHaveFocus();
+
+    fireEvent.keyDown(menu, { key: 'ArrowUp' });
+    expect(appleMusic).toHaveFocus();
+
+    fireEvent.keyDown(menu, { key: 'ArrowUp' });
+    expect(tidal).toHaveFocus();
+
+    fireEvent.keyDown(menu, { key: 'Home' });
+    expect(appleMusic).toHaveFocus();
+
+    fireEvent.keyDown(menu, { key: 'End' });
+    expect(tidal).toHaveFocus();
+
+    fireEvent.keyDown(menu, { key: 'ArrowDown' });
+    expect(appleMusic).toHaveFocus();
+  });
+
+  it.each([
+    ['Tab', false],
+    ['Shift+Tab', true],
+  ])('closes the platform menu on %s without preventing default', (_, shiftKey) => {
+    render(<LandingIntro />);
+    const trigger = screen.getByRole('button', {
+      name: 'More streaming platforms',
+    });
+
+    fireEvent.click(trigger);
+
+    const appleMusic = screen.getByRole('menuitem', { name: 'Apple Music' });
+    expect(appleMusic).toHaveFocus();
+
+    const defaultAllowed = fireEvent.keyDown(appleMusic, {
+      key: 'Tab',
+      shiftKey,
+    });
+
+    expect(defaultAllowed).toBe(true);
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    expect(trigger).not.toHaveFocus();
+  });
+
+  it('closes the platform menu after selection, outside click, and Escape', () => {
+    render(<LandingIntro />);
+    const trigger = screen.getByRole('button', {
+      name: 'More streaming platforms',
+    });
+
+    fireEvent.click(trigger);
+    fireEvent.click(screen.getByRole('menuitem', { name: 'Tidal' }));
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(trigger);
+    fireEvent.mouseDown(document.body);
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+
+    fireEvent.click(trigger);
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    expect(trigger).toHaveFocus();
+  });
+
+  it('removes platform menu document listeners when unmounted while open', () => {
+    const addEventListenerSpy = vi.spyOn(document, 'addEventListener');
+    const removeEventListenerSpy = vi.spyOn(document, 'removeEventListener');
+    const { unmount } = render(<LandingIntro />);
+
+    fireEvent.click(
+      screen.getByRole('button', { name: 'More streaming platforms' }),
+    );
+
+    const mousedownListener = addEventListenerSpy.mock.calls.find(
+      ([type]) => type === 'mousedown',
+    )?.[1];
+    const keydownListener = addEventListenerSpy.mock.calls.find(
+      ([type]) => type === 'keydown',
+    )?.[1];
+
+    expect(mousedownListener).toBeTypeOf('function');
+    expect(keydownListener).toBeTypeOf('function');
+
+    unmount();
+
+    expect(removeEventListenerSpy).toHaveBeenCalledWith(
+      'mousedown',
+      mousedownListener,
+    );
+    expect(removeEventListenerSpy).toHaveBeenCalledWith(
+      'keydown',
+      keydownListener,
+    );
   });
 
   it('restores interaction immediately when reduced motion is preferred', () => {
@@ -805,16 +1212,20 @@ describe('LandingIntro', () => {
     expect(gsapMock.timelines).toHaveLength(1);
   });
 
-  it('provides a bounded internally scrollable viewport', () => {
+  it('uses dynamic viewport fallbacks and reserves scrolling for lyrics', () => {
     const css = readFileSync(
       'src/components/LandingIntro/LandingIntro.module.scss',
       'utf8',
     );
     const pageRule = css.match(/\.page\s*\{([^}]*)\}/)?.[1];
+    const lyricsScrollRule = css.match(/\.lyrics__scroll\s*\{([^}]*)\}/)?.[1];
 
+    expect(pageRule).toMatch(/height:\s*100vh/);
     expect(pageRule).toMatch(/height:\s*100svh/);
-    expect(pageRule).toMatch(/overflow-y:\s*auto/);
-    expect(pageRule).toMatch(/overflow-x:\s*hidden/);
+    expect(pageRule).toMatch(/height:\s*100dvh/);
+    expect(pageRule).toMatch(/overflow:\s*hidden/);
+    expect(lyricsScrollRule).toMatch(/overflow-y:\s*auto/);
+    expect(css).not.toMatch(/\.shell\s*\{[\s\S]*?transform:\s*scale\(/);
   });
 
   it('does not create a timeline when unmounted before fonts are ready', async () => {

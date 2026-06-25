@@ -1,0 +1,80 @@
+<!-- @dsCard group="Player" name="Audio Preview" subtitle="WaveSurfer player — play button + waveform" viewport='{"width":640,"height":200}' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audio Preview — Caramelo Player</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(to bottom, #f9ecd3, #e4a45e);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .player {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 421px;
+  }
+  .play-btn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #272727;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .15s ease;
+  }
+  .play-btn:hover { opacity: .85; }
+  .waveform {
+    flex: 1;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    overflow: hidden;
+  }
+  .bar {
+    flex-shrink: 0;
+    width: 3px;
+    border-radius: 2px;
+  }
+  .bar--played { background: #c97832; }
+  .bar--unplayed { background: rgba(255,255,255,.35); }
+</style>
+</head>
+<body>
+<div class="player" role="group" aria-label="Audio preview player">
+  <button class="play-btn" aria-label="Play preview">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M4 2.5L13 8L4 13.5V2.5Z" fill="white"/>
+    </svg>
+  </button>
+  <div class="waveform" aria-hidden="true">
+    <script>
+      // Generate waveform bars visually
+      (function() {
+        const heights = [14,18,22,28,32,26,20,16,24,30,36,40,34,28,22,18,26,32,38,36,30,24,20,26,32,36,40,38,32,28,24,22,28,34,40,36,30,26,22,18,24,30,36,40,34,28,22,18,14,18,22,26,30,34,38,36,30,24,20,16,22,28,34,40,36,30,26,22,18,24,30,36,38,34,28,24,20,16,20,26,32,38,40,36,30,26,22,18,24,30,36,40,34,28,22,18,14,18,22,28,32,28,24,20,16,22,28,34,38,36];
+        const pivot = 30;
+        const bars = heights.map((h, i) => {
+          const isPlayed = i < pivot;
+          return '<div class="bar ' + (isPlayed ? 'bar--played' : 'bar--unplayed') + '" style="height:' + h + 'px"></div>';
+        });
+        document.write(bars.join(''));
+      })();
+    </script>
+  </div>
+</div>
+</body>
+</html>

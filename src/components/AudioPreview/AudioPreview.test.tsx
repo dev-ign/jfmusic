@@ -89,6 +89,19 @@ describe('AudioPreview', () => {
     );
   });
 
+  it('shows the waveform area by default', () => {
+    const { container } = render(<AudioPreview audioSrc="/preview.mp3" />);
+    expect(container.querySelector('[class*="waveform-area"]')).not.toBeNull();
+  });
+
+  it('suppresses the waveform area when showWaveform is false', () => {
+    const { container } = render(
+      <AudioPreview audioSrc="/preview.mp3" showWaveform={false} />,
+    );
+    expect(container.querySelector('[class*="waveform-area"]')).toBeNull();
+    expect(screen.getByRole('button', { name: 'Play preview' })).toBeInTheDocument();
+  });
+
   it('reports play, pause, replay, and finish state transitions', () => {
     const onPlaybackChange = vi.fn();
 
@@ -130,7 +143,7 @@ describe('AudioPreview', () => {
     expect(onPlaybackChange.mock.calls).toEqual([[true], [false]]);
   });
 
-  it('does not qualify when real playback reaches only 84 percent', () => {
+  it('does not qualify when real playback remains below 90 percent', () => {
     const onQualifiedFinish = vi.fn();
 
     render(
@@ -141,14 +154,12 @@ describe('AudioPreview', () => {
     );
 
     emit('play');
-    emit('audioprocess', 84);
-    emit('finish');
+    emit('audioprocess', 89);
 
     expect(onQualifiedFinish).not.toHaveBeenCalled();
-    expect(getInstance().seekTo).toHaveBeenCalledWith(0);
   });
 
-  it('qualifies at 85 percent and delays waveform reset', () => {
+  it('qualifies as soon as real playback reaches 90 percent', () => {
     const onQualifiedFinish = vi.fn();
 
     render(
@@ -159,19 +170,13 @@ describe('AudioPreview', () => {
     );
 
     emit('play');
-    emit('audioprocess', 85);
-    emit('finish');
+    emit('audioprocess', 90);
 
     expect(onQualifiedFinish).toHaveBeenCalledTimes(1);
     expect(getInstance().seekTo).not.toHaveBeenCalled();
-
-    const reset = onQualifiedFinish.mock.calls[0]?.[0];
-    act(() => reset());
-
-    expect(getInstance().seekTo).toHaveBeenCalledWith(0);
   });
 
-  it('makes a delayed qualified reset idempotent', () => {
+  it('opens only once while the same playback continues', () => {
     const onQualifiedFinish = vi.fn();
 
     render(
@@ -182,20 +187,14 @@ describe('AudioPreview', () => {
     );
 
     emit('play');
-    emit('audioprocess', 85);
-    emit('finish');
+    emit('audioprocess', 90);
+    emit('audioprocess', 95);
+    emit('audioprocess', 100);
 
-    const reset = onQualifiedFinish.mock.calls[0]?.[0];
-    act(() => {
-      reset();
-      reset();
-    });
-
-    expect(getInstance().seekTo).toHaveBeenCalledTimes(1);
-    expect(getInstance().seekTo).toHaveBeenCalledWith(0);
+    expect(onQualifiedFinish).toHaveBeenCalledTimes(1);
   });
 
-  it('invalidates a pending reset when replay starts without seeking', () => {
+  it('qualifies again on the next playback after finishing', () => {
     const onQualifiedFinish = vi.fn();
 
     render(
@@ -208,55 +207,17 @@ describe('AudioPreview', () => {
     emit('play');
     emit('audioprocess', 90);
     emit('finish');
-
-    const reset = onQualifiedFinish.mock.calls[0]?.[0];
     emit('play');
-    act(() => reset());
+    emit('audioprocess', 90);
 
-    expect(getInstance().seekTo).not.toHaveBeenCalled();
-
-    emit('audioprocess', 84);
-    emit('finish');
-
-    expect(onQualifiedFinish).toHaveBeenCalledTimes(1);
-    expect(getInstance().seekTo).toHaveBeenCalledTimes(1);
+    expect(onQualifiedFinish).toHaveBeenCalledTimes(2);
   });
 
-  it('does not let an obsolete reset seek a replacement instance', () => {
-    const onQualifiedFinish = vi.fn();
-    const { rerender } = render(
-      <AudioPreview
-        audioSrc="/preview-one.mp3"
-        onQualifiedFinish={onQualifiedFinish}
-      />,
-    );
-    const firstInstance = getInstance();
-
-    emitFrom(firstInstance, 'play');
-    emitFrom(firstInstance, 'audioprocess', 90);
-    emitFrom(firstInstance, 'finish');
-    const reset = onQualifiedFinish.mock.calls[0]?.[0];
-
-    rerender(
-      <AudioPreview
-        audioSrc="/preview-two.mp3"
-        onQualifiedFinish={onQualifiedFinish}
-      />,
-    );
-    const secondInstance = getInstance();
-
-    act(() => reset());
-
-    expect(firstInstance.destroy).toHaveBeenCalledTimes(1);
-    expect(firstInstance.seekTo).not.toHaveBeenCalled();
-    expect(secondInstance.seekTo).not.toHaveBeenCalled();
-  });
-
-  it('resets a qualified finish immediately when no completion handler exists', () => {
+  it('resets the waveform when playback finishes', () => {
     render(<AudioPreview audioSrc="/preview.mp3" />);
 
     emit('play');
-    emit('audioprocess', 85);
+    emit('audioprocess', 90);
     emit('finish');
 
     expect(getInstance().seekTo).toHaveBeenCalledWith(0);
@@ -273,10 +234,8 @@ describe('AudioPreview', () => {
     );
 
     emit('audioprocess', 100);
-    emit('finish');
 
     expect(onQualifiedFinish).not.toHaveBeenCalled();
-    expect(getInstance().seekTo).toHaveBeenCalledWith(0);
   });
 
   it('ignores audioprocess progress after playback pauses', () => {
@@ -292,36 +251,8 @@ describe('AudioPreview', () => {
     emit('play');
     emit('pause');
     emit('audioprocess', 90);
-    emit('finish');
 
     expect(onQualifiedFinish).not.toHaveBeenCalled();
-    expect(getInstance().seekTo).toHaveBeenCalledWith(0);
-  });
-
-  it('clears peak progress when reset for the next listen', () => {
-    const onQualifiedFinish = vi.fn();
-
-    render(
-      <AudioPreview
-        audioSrc="/preview.mp3"
-        onQualifiedFinish={onQualifiedFinish}
-      />,
-    );
-
-    emit('play');
-    emit('audioprocess', 90);
-    emit('finish');
-
-    const reset = onQualifiedFinish.mock.calls[0]?.[0];
-    act(() => reset());
-
-    getInstance().seekTo.mockClear();
-    emit('play');
-    emit('audioprocess', 84);
-    emit('finish');
-
-    expect(onQualifiedFinish).toHaveBeenCalledTimes(1);
-    expect(getInstance().seekTo).toHaveBeenCalledWith(0);
   });
 
   it('does not recreate WaveSurfer when parent callback identities change', () => {

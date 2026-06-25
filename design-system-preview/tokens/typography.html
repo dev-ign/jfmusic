@@ -1,0 +1,62 @@
+<!-- @dsCard group="Tokens" name="Typography" subtitle="Island Moments · Schibsted Grotesk · Inter" viewport='{"width":640,"height":480}' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Typography — Caramelo Design Tokens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(to bottom, #f9ecd3, #e4a45e);
+    min-height: 100vh;
+    padding: 32px;
+    color: #1f1f1f;
+  }
+  h1 { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #843a09; margin-bottom: 28px; }
+  .specimen { margin-bottom: 32px; border-radius: 12px; background: rgba(255,255,255,.55); padding: 20px 22px; backdrop-filter: blur(8px); }
+  .specimen__label { font-family: 'Inter', monospace; font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #843a09; margin-bottom: 12px; }
+  .specimen__var { font-family: 'Inter', monospace; font-size: 10px; color: #9b6a3a; margin-bottom: 14px; }
+  .script-sample { font-family: 'Island Moments', cursive; font-size: 72px; color: #843a09; line-height: 1; }
+  .sans-sample { font-family: 'Schibsted Grotesk', sans-serif; }
+  .sans-row { margin-bottom: 6px; }
+  .meta-sample { font-family: 'Inter', sans-serif; }
+  .meta-row { margin-bottom: 4px; }
+  .f-400 { font-weight: 400; }
+  .f-500 { font-weight: 500; }
+  .f-600 { font-weight: 600; }
+  .f-700 { font-weight: 700; }
+  small { font-size: 10px; color: #666; }
+</style>
+</head>
+<body>
+<h1>Typography Tokens</h1>
+<div class="specimen">
+  <div class="specimen__label">Script — --font-script</div>
+  <div class="specimen__var">Island Moments, cursive</div>
+  <div class="script-sample">Jona Ferreira</div>
+</div>
+<div class="specimen">
+  <div class="specimen__label">Sans — --font-sans</div>
+  <div class="specimen__var">Schibsted Grotesk, sans-serif</div>
+  <div class="sans-sample">
+    <div class="sans-row f-400" style="font-size:24px">Caramelo — Single <small>400</small></div>
+    <div class="sans-row f-500" style="font-size:18px">Listen Now · Save Song · Follow <small>500</small></div>
+    <div class="sans-row f-600" style="font-size:14px">LATEST RELEASE · LATIN <small>600</small></div>
+    <div class="sans-row f-700" style="font-size:13px">Button Label — Primary <small>700</small></div>
+  </div>
+</div>
+<div class="specimen">
+  <div class="specimen__label">Meta — --font-meta</div>
+  <div class="specimen__var">Inter, sans-serif</div>
+  <div class="meta-sample">
+    <div class="meta-row f-400" style="font-size:14px">Single · 3:42 · 2025 <small>400</small></div>
+    <div class="meta-row f-500" style="font-size:12px">Track metadata · Credits <small>500</small></div>
+    <div class="meta-row f-600" style="font-size:12px; letter-spacing:.18em; text-transform:uppercase">POST PREVIEW EYEBROW <small>600</small></div>
+  </div>
+</div>
+</body>
+</html>

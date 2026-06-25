@@ -1,0 +1,62 @@
+<!-- @dsCard group="Tokens" name="Colors" subtitle="All --color-* CSS custom properties" viewport='{"width":640,"height":520}' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colors — Caramelo Design Tokens</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #faf6ef;
+    padding: 32px;
+    color: #1f1f1f;
+  }
+  h1 { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #843a09; margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .swatch { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+  .swatch__color { height: 64px; }
+  .swatch__info { padding: 8px 10px; background: #fff; }
+  .swatch__name { font-size: 10px; font-weight: 600; color: #555; margin-bottom: 2px; word-break: break-all; }
+  .swatch__value { font-size: 10px; color: #999; font-family: monospace; }
+  .section { margin-bottom: 24px; }
+  .section-label { font-size: 11px; font-weight: 700; color: #aaa; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<h1>Color Tokens</h1>
+<div class="section">
+  <div class="section-label">Page Gradient</div>
+  <div class="grid">
+    <div class="swatch"><div class="swatch__color" style="background:#f9ecd3"></div><div class="swatch__info"><div class="swatch__name">gradient-start</div><div class="swatch__value">#f9ecd3</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#e4a45e"></div><div class="swatch__info"><div class="swatch__name">gradient-end</div><div class="swatch__value">#e4a45e</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:linear-gradient(to bottom,#f9ecd3,#e4a45e)"></div><div class="swatch__info"><div class="swatch__name">page gradient</div><div class="swatch__value">start → end</div></div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-label">Text</div>
+  <div class="grid">
+    <div class="swatch"><div class="swatch__color" style="background:#843a09"></div><div class="swatch__info"><div class="swatch__name">artist-name</div><div class="swatch__value">#843a09</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#1f1f1f"></div><div class="swatch__info"><div class="swatch__name">text-primary</div><div class="swatch__value">#1f1f1f</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:rgba(0,0,0,.61)"></div><div class="swatch__info"><div class="swatch__name">text-secondary</div><div class="swatch__value">rgba(0,0,0,.61)</div></div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-label">Buttons</div>
+  <div class="grid">
+    <div class="swatch"><div class="swatch__color" style="background:#212121"></div><div class="swatch__info"><div class="swatch__name">btn-primary-bg</div><div class="swatch__value">#212121</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#e0d2bd"></div><div class="swatch__info"><div class="swatch__name">btn-primary-text</div><div class="swatch__value">#e0d2bd</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:rgba(0,0,0,.3)"></div><div class="swatch__info"><div class="swatch__name">pill-bg</div><div class="swatch__value">rgba(0,0,0,.3)</div></div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="section-label">Player</div>
+  <div class="grid">
+    <div class="swatch"><div class="swatch__color" style="background:#272727"></div><div class="swatch__info"><div class="swatch__name">player-bg</div><div class="swatch__value">#272727</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#ffffff;border:1px solid #eee"></div><div class="swatch__info"><div class="swatch__name">player-icon</div><div class="swatch__value">#ffffff</div></div></div>
+    <div class="swatch"><div class="swatch__color" style="background:#c97832"></div><div class="swatch__info"><div class="swatch__name">waveform-progress</div><div class="swatch__value">#c97832</div></div></div>
+  </div>
+</div>
+</body>
+</html>

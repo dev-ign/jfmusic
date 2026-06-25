@@ -1,0 +1,48 @@
+:root {
+  --color-gradient-start: #f9ecd3;
+  --color-gradient-end: #e4a45e;
+  --color-artist-name: #843a09;
+  --color-text-primary: #1f1f1f;
+  --color-text-secondary: rgba(0, 0, 0, 0.61);
+  --color-btn-primary-bg: #212121;
+  --color-btn-primary-text: #e0d2bd;
+  --color-btn-outline-border: #212121;
+  --color-btn-outline-text: #212121;
+  --color-pill-bg: rgba(0, 0, 0, 0.3);
+  --color-player-bg: #272727;
+  --color-player-icon: #ffffff;
+  --color-waveform-base: rgba(255, 255, 255, 0.35);
+  --color-waveform-progress: #c97832;
+
+  --radius-cover: 16.667px;
+  --radius-pill: 100px;
+
+  --shadow-cover: 0 20px 60px rgba(0, 0, 0, 0.18);
+  --shadow-pill: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  --font-script: var(--font-island-moments), 'Island Moments', cursive;
+  --font-sans: var(--font-schibsted-grotesk), 'Schibsted Grotesk', sans-serif;
+  --font-meta: var(--font-inter), 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: radial-gradient(125% 95% at 50% 14%, #fdf4e0 0%, #f8e9c8 34%, #efd29a 62%, #e2ac61 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,143 @@
+<!-- @dsCard group="Overlays" name="Post-Preview Modal" subtitle="Glassmorphism CTA modal after preview completion" viewport='{"width":640,"height":560}' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Post-Preview Modal — Caramelo Overlays</title>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --modal-cream: 249 236 211;
+    --modal-caramel: 132 58 9;
+    --modal-amber: 201 120 50;
+    --modal-gold: 228 164 94;
+  }
+
+  body {
+    font-family: 'Schibsted Grotesk', sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(20px, 5vw, 64px);
+    background:
+      radial-gradient(circle at 14% 12%, rgb(var(--modal-gold) / 0.25), transparent 46%),
+      radial-gradient(circle at 84% 18%, rgb(var(--modal-cream) / 0.17), transparent 42%),
+      radial-gradient(circle at 76% 84%, rgb(var(--modal-amber) / 0.2), transparent 48%),
+      radial-gradient(circle at 18% 88%, rgb(var(--modal-caramel) / 0.22), transparent 52%),
+      rgb(20 10 5 / 0.9);
+    backdrop-filter: blur(18px) saturate(.9);
+  }
+
+  .surface {
+    position: relative;
+    width: min(100%, 580px);
+    padding: clamp(28px, 6vw, 48px);
+    overflow: hidden;
+    color: rgb(var(--modal-cream));
+    background:
+      linear-gradient(145deg, rgb(var(--modal-cream) / 0.14), rgb(var(--modal-caramel) / 0.13)),
+      rgb(35 18 9 / 0.58);
+    border: 1px solid rgb(255 255 255 / 0.18);
+    border-radius: clamp(24px, 4vw, 36px);
+    box-shadow:
+      0 0 0 1px rgb(var(--modal-gold) / 0.08),
+      0 0 56px rgb(var(--modal-amber) / 0.16),
+      0 32px 90px rgb(0 0 0 / 0.54);
+    backdrop-filter: blur(28px) saturate(1.05);
+  }
+
+  .surface::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: '';
+    background:
+      radial-gradient(circle at 22% 0%, rgb(var(--modal-cream) / 0.18), transparent 42%),
+      linear-gradient(135deg, rgb(255 255 255 / 0.08), transparent 44%);
+  }
+
+  .content, .actions { position: relative; z-index: 1; }
+
+  .eyebrow {
+    margin: 0 0 12px;
+    color: rgb(var(--modal-gold));
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .heading {
+    margin: 0;
+    color: rgb(var(--modal-cream));
+    font-size: clamp(30px, 7vw, 48px);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .body {
+    max-width: 44ch;
+    margin: 18px 0 0;
+    color: rgb(var(--modal-cream) / 0.76);
+    font-size: clamp(14px, 2.2vw, 17px);
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: clamp(24px, 5vw, 38px);
+  }
+
+  .action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 11px 16px;
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: 999px;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(var(--modal-cream) / 0.9);
+    background: rgb(var(--modal-cream) / 0.07);
+    transition: background .18s ease;
+  }
+
+  .action--primary {
+    grid-column: 1 / -1;
+    min-height: 50px;
+    font-size: 15px;
+    color: rgb(var(--modal-cream));
+    background: rgb(38 17 7);
+    border-color: rgb(var(--modal-gold) / 0.42);
+    box-shadow: 0 14px 34px rgb(0 0 0 / 0.34), inset 0 1px 0 rgb(var(--modal-cream) / 0.12);
+  }
+</style>
+</head>
+<body>
+<div class="surface" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+  <div class="content">
+    <p class="eyebrow">You just heard it</p>
+    <h2 class="heading" id="modal-title">Love what you heard?</h2>
+    <p class="body" id="modal-desc">Stream the full track on Spotify, save it to your library, or follow Jona Ferreira to catch every new release.</p>
+  </div>
+  <div class="actions">
+    <a class="action action--primary" href="#">Listen Full Song</a>
+    <button class="action">Save Song</button>
+    <button class="action">Follow Artist</button>
+    <button class="action">Share Track</button>
+  </div>
+</div>
+</body>
+</html>
