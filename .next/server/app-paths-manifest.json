@@ -3,6 +3,6 @@
   "/_global-error/page": "app/_global-error/page.js",
   "/api/media/cover/route": "app/api/media/cover/route.js",
   "/api/media/preview/route": "app/api/media/preview/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/icon/route": "app/icon/route.js",
   "/page": "app/page.js"
 }

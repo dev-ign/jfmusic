@@ -546,7 +546,7 @@ describe('LandingIntro', () => {
       /@media\s*\(max-width:\s*430px\)[\s\S]*?\.cover-float-wrap\s*\{[\s\S]*?scale\(1\.4\)/,
     );
     expect(css).toMatch(
-      /@media\s*\(max-width:\s*430px\)[\s\S]*?--control-gap:\s*30px[\s\S]*?\.btn-icon\s*\{[\s\S]*?width:\s*72px[\s\S]*?height:\s*72px/,
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?--control-gap:\s*54px[\s\S]*?\.btn-icon\s*\{[\s\S]*?width:\s*72px[\s\S]*?height:\s*72px/,
     );
     expect(css).toMatch(
       /@media\s*\(max-width:\s*430px\)[\s\S]*?\.disc-nav-band__btn\s*\{[\s\S]*?font-size:\s*12px/,
@@ -599,6 +599,34 @@ describe('LandingIntro', () => {
     expect(css).toMatch(
       /@media\s*\(max-width:\s*380px\)[\s\S]*?audio-preview__play-btn\)\s*\{[\s\S]*?width:\s*100px[\s\S]*?height:\s*100px[\s\S]*?audio-preview__play-btn svg\)\s*\{[\s\S]*?width:\s*38px[\s\S]*?height:\s*38px/,
     );
+  });
+
+  it('lowers the player row on desktop and proportionally across mobile', () => {
+    const css = readFileSync(
+      'src/components/LandingIntro/LandingIntro.module.scss',
+      'utf8',
+    );
+    const baseStageRule = css.match(/\.stage-scale\s*\{([^}]*)\}/)?.[1];
+
+    expect(baseStageRule).toMatch(/--control-gap:\s*44px/);
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*700px\)[\s\S]*?--control-gap:\s*48px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*560px\)[\s\S]*?--control-gap:\s*51px/,
+    );
+    expect(css).toMatch(
+      /@media\s*\(max-width:\s*430px\)[\s\S]*?--control-gap:\s*54px/,
+    );
+  });
+
+  it('provides a handwritten JF app icon using signature glyph paths', () => {
+    const iconSource = readFileSync('src/app/icon.tsx', 'utf8');
+
+    expect(iconSource).toContain('SIGNATURE_PATHS[0]');
+    expect(iconSource).toContain('SIGNATURE_PATHS[4]');
+    expect(iconSource).toContain('#843a09');
+    expect(iconSource).toContain('JF favicon');
   });
 
   it('reserves an eligible finish, then marks and resets only after the modal commits open', () => {

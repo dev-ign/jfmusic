@@ -54,10 +54,10 @@
       "namedRegex": "^/api/media/preview(?:/)?$"
     },
     {
-      "page": "/favicon.ico",
-      "regex": "^/favicon\\.ico(?:/)?$",
+      "page": "/icon",
+      "regex": "^/icon(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/favicon\\.ico(?:/)?$"
+      "namedRegex": "^/icon(?:/)?$"
     }
   ],
   "dataRoutes": [],

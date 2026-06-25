@@ -3,6 +3,6 @@
   "/_global-error/page": "/_global-error",
   "/api/media/cover/route": "/api/media/cover",
   "/api/media/preview/route": "/api/media/preview",
-  "/favicon.ico/route": "/favicon.ico",
+  "/icon/route": "/icon",
   "/page": "/"
 }
